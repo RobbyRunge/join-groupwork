@@ -1,4 +1,4 @@
-const BASE_URL = "https://dv-join-bbc2e-default-rtdb.europe-west1.firebasedatabase.app/";
+const BASE_URL = "https://join-16440-default-rtdb.europe-west1.firebasedatabase.app/";
 export const signBtn = document.querySelector("#signBtn_next_page");
 const refLoginWindow = document.querySelector(".login_window");
 const refSignWindow = document.querySelector(".sign_window");

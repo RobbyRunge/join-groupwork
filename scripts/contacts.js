@@ -1,5 +1,5 @@
 /** Base URL for Firebase database connection */
-BASE_URL = "https://dv-join-bbc2e-default-rtdb.europe-west1.firebasedatabase.app/";
+BASE_URL = "https://join-16440-default-rtdb.europe-west1.firebasedatabase.app/";
 /** Array to store all contact objects */
 let arrayOfContacts = [];
 /** Predefined color palette for contact avatars */

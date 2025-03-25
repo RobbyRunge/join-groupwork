@@ -1,4 +1,4 @@
-BASE_URL = "https://dv-join-bbc2e-default-rtdb.europe-west1.firebasedatabase.app/";
+BASE_URL = "https://join-16440-default-rtdb.europe-west1.firebasedatabase.app/";
 selectedButton = "medium";
 let subtasksList = {};
 arrayOfContacts = [];

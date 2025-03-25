@@ -2,7 +2,7 @@
  * The base URL for the Firebase database.
  * @const {string}
  */
-const BASE_URL = "https://dv-join-bbc2e-default-rtdb.europe-west1.firebasedatabase.app/";
+const BASE_URL = "https://join-16440-default-rtdb.europe-west1.firebasedatabase.app/";
 
 /**
  * Reference to the login button element.

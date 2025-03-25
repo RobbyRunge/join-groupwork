@@ -1,6 +1,5 @@
 /** Base URL for the Firebase database */
-const BASE_URL = "https://dv-join-bbc2e-default-rtdb.europe-west1.firebasedatabase.app/";
-
+const BASE_URL = "https://join-16440-default-rtdb.europe-west1.firebasedatabase.app/";
 /** DOM element for displaying total tasks count */
 let tasksInBoard = document.querySelector("#current_number_tasks_in_board");
 /** DOM element for displaying in-progress tasks count */

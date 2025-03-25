@@ -1,5 +1,5 @@
 /** Firebase database base URL */
-BASE_URL = "https://dv-join-bbc2e-default-rtdb.europe-west1.firebasedatabase.app/";
+BASE_URL = "https://join-16440-default-rtdb.europe-west1.firebasedatabase.app/";
 
 /** Reference to the submenu DOM element */
 let submenuRef = document.getElementById("submenu_position");
