@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/icons/logo/joinLarge.png" type="image/x-icon" />
 
-    <script type="module" src="./scripts/signUp.js" defer></script>
-    <script src="./scripts/login.js" defer></script>
-    <script src="./scripts/checkActiveUser.js" defer></script>
-    <script type="module" src="./scripts/signUpEventListener.js" defer></script>
-    <script src="./scripts/orientation.js" defer></script>
+    <script type="module" src="./scripts/pages/signUp.js" defer></script>
+    <script src="./scripts/pages/login.js" defer></script>
+    <script src="./scripts/utilities/checkActiveUser.js" defer></script>
+    <script type="module" src="./scripts/components/signUpEventListener.js" defer></script>
+    <script src="./scripts/utilities/orientation.js" defer></script>
 
     <link rel="stylesheet" href="./css/standard.css" />
-    <link rel="stylesheet" href="./css/login.css" />
-    <link rel="stylesheet" href="./css/signUp.css" />
-    <title>JOIN Login</title>
+    <link rel="stylesheet" href="./css/pages/login.css" />
+    <link rel="stylesheet" href="./css/pages/signUp.css" />
+    <title>JOIN</title>
   </head>
   <body>
     <div id="overlay">
@@ -40,7 +40,7 @@
         <div class="underline"></div>
       </div>
       <div>
-        <form id="loginForm" class="form_content" action="">
+        <form id="loginForm" class="form_content" novalidate>
           <label for="loginEmail"></label>
           <input id="loginEmail" type="email" placeholder="Email" required />
           <div id="email_error" class="error_message email_error_position"></div>
@@ -54,7 +54,7 @@
 
           <div class="form_btn">
             <button id="login_btn" type="submit" class="transition">Log in</button>
-            <button id="guest_log" class="cursor_pointer transition" type="submit" onclick="linkGuestBtn()">Guest Log in</button>
+            <button id="guest_log" class="cursor_pointer transition" type="button">Guest Log in</button>
           </div>
         </form>
       </div>
@@ -74,7 +74,7 @@
       </div>
       <div>
         <div>
-          <form id="signUp" class="form_content" action="">
+          <form id="signUp" class="form_content" novalidate>
             <label for="name"></label>
             <input id="name" name="name" type="text" placeholder="Name" />
             <div id="signUp_name_error" class="error_message email_error_position"></div>
@@ -111,8 +111,8 @@
     </div>
 
     <footer class="terms_conditions" style="display: none">
-      <a href="./privacy_policy.html" class="transition">Privacy Policy</a>
-      <a href="./legal_notice.html" class="transition">Legal Notice</a>
+      <a href="./pages/policy/privacy_policy.html" class="transition">Privacy Policy</a>
+      <a href="./pages/legal_notice.html" class="transition">Legal Notice</a>
     </footer>
   </body>
 </html>

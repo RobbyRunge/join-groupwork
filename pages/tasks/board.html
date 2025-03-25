@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="./assets/icons/logo/joinLarge.png" type="image/x-icon" />
+
+    <script src="../../scripts/utilities/submenu.js" defer></script>
+    <script src="../../scripts/templates/HTMLTamplates.js" defer></script>
+    <script src="../../scripts/pages/board.js" defer></script>
+    <script src="../../scripts/components/openCard.js" defer></script>
+    <script src="../../scripts/components/drop_down_menu.js" defer></script>
+    <script src="../../scripts/utilities/aside.js" defer></script>
+    <script src="../../scripts/utilities/submenu_initials.js" defer></script>
+    <script src="../../scripts/components/edit_function.js" defer></script>
+    <script src="../../scripts/components/search_function.js" defer></script>
+    <script src="../../scripts/components/add_task_in_board.js" defer></script>
+    <script src="../../scripts/utilities/checkActiveUser.js" defer></script>
+    <script src="../../scripts/components/scroll.js" defer></script>
+    <script src="../../scripts/utilities/orientation.js" defer></script>
+    <script src="../../scripts/components/add_task_board_eventlistener.js" defer></script>
+    <script src="../../scripts/components/priorityButtons.js" defer></script>
+    <script src="../../scripts/components/highlight_droppoint.js" defer></script>
+
+    <link rel="stylesheet" href="../../css/utilities/aside.css" />
+    <link rel="stylesheet" href="../../css/utilities/header.css" />
+    <link rel="stylesheet" href="../../css/utilities/main.css" />
+    <link rel="stylesheet" href="../../css/standard.css" />
+    <link rel="stylesheet" href="../../css/utilities/submenu.css" />
+    <link rel="stylesheet" href="../../css/pages/board.css" />
+    <link rel="stylesheet" href="../../css/components/card.css" />
+    <link rel="stylesheet" href="../../css/components/openCard.css" />
+    <link rel="stylesheet" href="../../css/pages/add_task.css" />
+    <link rel="stylesheet" href="../../css/components/edit_section.css" />
+    <link rel="stylesheet" href="../../css/components/custom_dropdown_menu.css" />
+    <link rel="stylesheet" href="../../css/components/add_task_in_board.css" />
+    <title>Board</title>
+  </head>
+  <body onload="noTaskToDo(), setAccountInitialsSubmenu(), displayCardOnBoard(), checkUser()">
+    <header>
+      <div>
+        <img class="mobile_logo" src="../../assets/icons/logo/JoinLogoMobile.svg" alt="" />
+        <h1>Kanban Project Managment Tool</h1>
+      </div>
+      <div class="question_marker_account_img_position">
+        <a href="../help/help.html"><img class="question_marker transition" src="../../assets/icons/imgs/questionMarker.svg" alt="" /></a>
+        <div class="account_circle transition" id="account_icon" onclick="toggleShowSubmenu()"></div>
+      </div>
+    </header>
+
+    <aside id="aside">
+      <div class="logo_position">
+        <img class="join_logo" src="../../assets/icons/aside/joinLogo.svg" alt="Join_Logo" />
+      </div>
+      <div class="nav_position">
+        <div class="link_nav_summary cursor_pointer transition">
+          <a href="../../pages/summary/summary.html"><img src="../../assets/icons/aside/summary.svg" alt="Summary" />Summary</a>
+        </div>
+        <div class="link_nav_add_task cursor_pointer transition">
+          <a href="../../pages/tasks/add_task.html"><img src="../../assets/icons/aside/addTask.svg" alt="Add Task" />Add Task</a>
+        </div>
+        <div class="link_nav_board cursor_pointer transition">
+          <a href="../../pages/tasks/board.html"><img src="../../assets/icons/aside/board.svg" alt="Board" />Board</a>
+        </div>
+        <div class="link_nav_contacts cursor_pointer transition">
+          <a href="../../pages/contacts/contacts.html"><img src="../../assets/icons/aside/contacts.svg" alt="Contacts" />Contacts</a>
+        </div>
+      </div>
+      <div class="legal_and_policy_position">
+        <div class="privacy_policy_login transition">
+          <a href="../policy/privacy_policy_login.html">Privacy Policy</a>
+        </div>
+        <div class="legal_notice_login transition">
+          <a href="../legal/legal_notice_login.html">Legal notice</a>
+        </div>
+      </div>
+    </aside>
+
+    <div id="submenu_position" class="d_none">
+      <div class="d_none help_submenu_section_responsive" onclick="window.location.href='../help/help.html'">
+        <a href="../help/help.html" class="submenu_links_design link_legal_notice_hover">Help</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='../legal/legal_notice_login.html'">
+        <a href="../legal/legal_notice_login.html" class="submenu_links_design link_legal_notice_hover">Legal Notice</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='../policy/privacy_policy_login.html'">
+        <a href="../policy/privacy_policy_login.html" class="submenu_links_design link_privacy_policy_hover">Privacy Policy</a>
+      </div>
+      <div class="submenu_section" onclick="logout()">
+        <a class="submenu_links_design link_login_hover" onclick="logout()">Log out</a>
+      </div>
+    </div>
+
+    <main>
+      <div id="overlay" onclick="overlayOff()">
+        <div id="box" onclick="stopEventBubbel(event)"></div>
+      </div>
+
+      <div id="overlayForAddTask" onclick="hideOverlay()">
+        <div id="add_task_box" onclick="stopEventBubbel(event)"></div>
+      </div>
+      <div class="board_container">
+        <section class="title_and_searchbar">
+          <h1 class="dekstop_view">Board</h1>
+          <div class="mobile_head">
+            <h1>Board</h1>
+            <button onclick="showOverlay(event), renderAddTaskMenu()" class="add_btn transition">Add task</button>
+          </div>
+          <form onsubmit="event.preventDefault()" id="search_form" class="search_bar">
+            <label for="" name="search"></label>
+            <input list="temp" type="search" id="searchbar" name="searchbar" placeholder="Find Task" />
+            <datalist id="temp"></datalist>
+            <button onclick="showOverlay(event), renderAddTaskMenu()" class="add_btn transition dekstop_view">Add task</button>
+          </form>
+        </section>
+
+        <div class="board_content">
+          <section class="toDo board_column">
+            <div class="board_column">
+              <div class="banner">
+                <h3>To do</h3>
+                <button id="addToDo" class="plus_button transition"></button>
+              </div>
+            </div>
+            <div id="placeholderToDo"></div>
+            <div id="toDo" ondrop="dropPoint(event)" ondragover="allowDrop(event)"></div>
+          </section>
+
+          <section class="progress board_column">
+            <div class="board_column">
+              <div class="banner">
+                <h3>In progress</h3>
+                <button id="addProgress" class="plus_button transition"></button>
+              </div>
+            </div>
+            <div id="placeholderProgress"></div>
+            <div id="progress" ondrop="dropPoint(event)" ondragover="allowDrop(event)"></div>
+          </section>
+
+          <section class="feedback board_column">
+            <div class="board_column">
+              <div class="banner">
+                <h3>Await feedback</h3>
+                <button id="addFeedback" class="plus_button transition"></button>
+              </div>
+            </div>
+            <div id="placeholderFeedback"></div>
+            <div id="feedback" ondrop="dropPoint(event)" ondragover="allowDrop(event)"></div>
+          </section>
+
+          <section class="done board_column">
+            <div class="board_column">
+              <h3>Done</h3>
+            </div>
+            <div id="placeholderDone"></div>
+            <div id="done" ondrop="dropPoint(event)" ondragover="allowDrop(event)"></div>
+          </section>
+        </div>
+      </div>
+      <div class="msg_d_none task_added">Task added to board</div>
+      <div class="msg_d_none no_found">No results found</div>
+      <div class="msg_d_none task_deleted_msg">Task Deleted from Board</div>
+    </main>
+  </body>
+</html>

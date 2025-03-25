@@ -1,0 +1,272 @@
+.category {
+  width: 7rem;
+  height: 1.6rem;
+  border: 1px transparent;
+  border-radius: 7px;
+  background-color: rgb(0, 56, 255);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.category_user_story {
+  width: 6rem;
+}
+
+.category_technical_task {
+  width: 9rem;
+  background-color: rgb(31, 215, 193);
+}
+
+.card_title {
+  text-overflow: ellipsis;
+  white-space: normal;
+  width: 280px;
+  max-height: 52px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.card_title h4 {
+  width: 280px;
+}
+
+.discription {
+  color: rgb(168, 168, 168);
+  font-family: InterLight;
+  white-space: normal;
+  word-break: break-word;
+  min-height: 90px;
+  max-height: 200px;
+}
+
+.discription h5 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 60px;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.progress_indicator {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+}
+
+.progress_container {
+  width: 160% !important;
+  max-width: 180px;
+  height: 10px;
+  background-color: rgb(244, 244, 244);
+  border-radius: 15px;
+  overflow: hidden;
+  position: absolute;
+  right: 117px;
+}
+
+.progress_bar {
+  height: 100%;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+  border-radius: 15px 0 0 15px;
+  transition: width 0.3s ease;
+}
+
+.profile_prio_container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 10px;
+}
+
+.prio {
+  position: absolute;
+  left: 260px;
+  bottom: 0px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 122, 0);
+  color: white;
+  border: 2px solid;
+  border-color: white;
+  border-radius: 50%;
+  height: 2.2rem;
+  width: 2.2rem;
+  text-align: center;
+}
+
+.circle_profile_names {
+  margin-left: 12px;
+}
+
+.rotate {
+  rotate: 4deg;
+  transition: transform 0.3s;
+}
+
+@media (min-width: 1600px) and (max-width: 1750px) {
+  .progress_container {
+    width: 120px !important;
+  }
+
+  .prio {
+    left: 210px;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .progress_container {
+    max-width: 80px;
+  }
+
+  .prio {
+    left: 170px;
+  }
+
+  .card_title h4 {
+    width: auto;
+    padding-right: 18px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .progress_container {
+    max-width: 70px;
+    right: 94px;
+  }
+
+  .circle {
+    width: 19px;
+    height: 19px;
+  }
+
+  h5 {
+    font-size: 12px !important;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
+  .progress_indicator {
+    width: 80px;
+  }
+
+  .prio {
+    left: 150px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .card {
+    width: 180px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    display: inline;
+  }
+
+  aside {
+    bottom: 0px;
+    width: 100%;
+    height: 80px;
+    top: initial;
+    position: fixed;
+    padding: 10px 0 10px 0;
+    align-items: center;
+  }
+
+  .logo_position {
+    display: none;
+  }
+
+  .nav_position {
+    flex-direction: initial;
+  }
+
+  .legal_and_policy_position {
+    display: none;
+  }
+
+  .nav_position {
+    width: 100%;
+  }
+
+  header h1 {
+    display: none;
+  }
+
+  .circle_profile_names {
+    margin-left: 22px;
+  }
+
+  .circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 12px;
+  }
+
+  .progress_indicator {
+    margin-bottom: 12px;
+  }
+
+  .card_title {
+    width: 200px;
+    white-space: normal;
+  }
+
+  .discription {
+    margin-top: 35px;
+  }
+
+  .prio {
+    left: 170px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .circle {
+    width: 1.9rem;
+    height: 1.9rem;
+    font-size: 16px;
+  }
+
+  .card_title {
+    width: 200px;
+    white-space: normal;
+  }
+
+  .discription {
+    margin-top: 35px;
+  }
+
+  .card_title {
+    width: 200px;
+    white-space: normal;
+  }
+
+  .discription {
+    margin-top: 35px;
+  }
+}

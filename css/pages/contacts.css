@@ -1,0 +1,584 @@
+body {
+  overflow: hidden;
+}
+
+.contact_headline {
+  position: absolute;
+  height: 73px;
+  top: 206px;
+  left: 743px;
+  gap: 30px;
+
+  display: flex;
+  align-items: center;
+}
+
+.overlay_contact_info_header {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 120px;
+  gap: 54px;
+}
+
+.overlay_contact_info_header h2 {
+  font-size: 47px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.account_icon {
+  width: 120px;
+  height: 120px;
+}
+
+.btn_position {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  height: 24px;
+  width: 159px;
+}
+
+.btn_position img {
+  cursor: pointer;
+}
+
+.edit_hover:hover {
+  content: url(../../assets/icons/contacts/edit_hover.svg);
+}
+
+.delete_hover:hover {
+  content: url(../../assets/icons/contacts/delete_hover.svg);
+}
+
+.headline_contact_info {
+  display: flex;
+  align-items: center;
+  width: 207px;
+  height: 74px;
+  margin-top: 21px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.headline_contact_info p {
+  margin: 0;
+}
+
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  height: 128px;
+}
+
+.contact_info span {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.email_design {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 124, 238, 1);
+}
+
+.number_design a {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 124, 238, 1) !important;
+}
+
+.overlay_add_contact_card,
+.overlay_edit_contact_card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1212px;
+  height: 592px;
+  border-radius: 30px;
+  z-index: 4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay_add_contact_left_side {
+  background: rgba(42, 54, 71, 1);
+  width: 467px;
+  height: 592px;
+  border-radius: 30px 0px 0px 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overlay_logo_position {
+  position: absolute;
+  top: 154px;
+  left: 46.9px;
+  width: 55.6px;
+  height: 66.48px;
+}
+
+.overlay_headline_add_contact {
+  width: 371px;
+  height: 129px;
+  margin: 66px 48px 66px 48px;
+  margin-bottom: 16px;
+}
+
+.overlay_headline_add_contact h1 {
+  font-size: 61px;
+  font-weight: 700;
+  color: rgba(255, 255, 255);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.overlay_headline_add_contact h2 {
+  font-size: 27px;
+  font-weight: 400;
+  color: rgba(255, 255, 255);
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.line_contact {
+  border: 3px solid rgba(41, 171, 226, 1);
+  width: 90px;
+}
+
+.overlay_add_contact_right_side {
+  background-color: rgb(255, 255, 255);
+  width: 745px;
+  height: 592px;
+  border-radius: 0px 30px 30px 0px;
+}
+
+.overlay_account_icon_position {
+  position: absolute;
+  top: 204px;
+  left: 550px;
+  width: 120px;
+  height: 120px;
+}
+
+.overlay_close_btn_position img {
+  position: absolute;
+  top: 48px;
+  left: 1132px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.overlay_close_btn_position img:hover {
+  border-radius: 50%;
+  background: rgba(238, 238, 238);
+}
+
+.form_input_fields_position {
+  position: absolute;
+  top: 137px;
+  left: 742px;
+  width: 422px;
+  height: 215px;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  cursor: pointer;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(209, 209, 209, 1);
+  padding: 13px 21px 13px 21px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+::placeholder {
+  color: rgba(209, 209, 209, 1);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border: 1px solid rgb(41, 171, 226);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.error-message {
+  position: absolute;
+  color: red;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.name_error_position {
+  position: absolute;
+  top: 53px;
+}
+
+.email_error_position {
+  position: absolute;
+  top: 137px;
+}
+
+.phone_error_position {
+  position: absolute;
+  top: 220px;
+}
+
+#add_name {
+  background: url(../../assets/icons/login_and_signUp/person.svg) no-repeat right 21px center;
+}
+
+#add_email {
+  background: url(../../assets/icons/login_and_signUp/mail.svg) no-repeat right 21px center;
+}
+
+#add_phone {
+  background: url(../../assets/icons/contacts/call.svg) no-repeat right 21px center;
+}
+
+.overlay_btn_position {
+  display: flex;
+  width: 364px;
+  height: 57px;
+  gap: 24px;
+}
+
+.btn_cancel {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding-left: 14px;
+  width: 126px;
+  height: 56px;
+  border-radius: 10px;
+  border: 1px solid rgba(42, 54, 71);
+  background-color: rgba(255, 255, 255);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.btn_cancel:hover,
+.btn_delete:hover {
+  border: 1px solid rgba(41, 171, 226);
+  color: rgba(41, 171, 226);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn_cancel:hover img,
+.btn_delete:hover img {
+  filter: invert(41%) sepia(100%) saturate(1000%) hue-rotate(170deg) brightness(100%) contrast(100%);
+}
+
+.btn_cancel img,
+.btn_create_contact img,
+.cancel_icon {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.btn_create_contact {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding-left: 12px;
+  width: 214px;
+  height: 57px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(42, 54, 71, 1);
+  color: rgba(255, 255, 255);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.btn_create_contact:hover,
+.btn_save:hover {
+  background-color: rgba(41, 171, 226);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn_delete {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 113px;
+  height: 57px;
+  padding-left: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(42, 54, 71);
+  background-color: rgba(255, 255, 255);
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.btn_save {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding-left: 10px;
+  width: 111px;
+  height: 57px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(42, 54, 71, 1);
+  color: rgba(255, 255, 255);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 1350px) {
+  .contact_headline {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 240px;
+    gap: 0;
+    top: calc(96px + 32px);
+    left: calc(743px - 70px);
+  }
+
+  .overlay_contact_info_header h2 {
+    font-size: 40px;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .line_responsive {
+    border-top: 3px solid rgb(41, 171, 226);
+    width: 90px;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .overlay_add_contact_left_side {
+    width: 440px;
+  }
+
+  .overlay_account_icon_position {
+    left: 500px;
+  }
+
+  #overlay_add_contact_card,
+  #overlay_edit_contact_card {
+    width: 90%;
+  }
+
+  .form_input_fields_position {
+    left: 700px;
+    width: 30%;
+  }
+
+  .btn_cancel {
+    display: none;
+  }
+
+  .overlay_btn_position {
+    width: 100%;
+  }
+
+  .overlay_close_btn_position img {
+    position: relative;
+    left: 570px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .legal_and_policy_position {
+    display: none;
+  }
+
+  .question_marker {
+    display: none;
+  }
+
+  .overlay_logo_position {
+    display: none;
+  }
+
+  .contact_headline {
+    left: 450px;
+  }
+
+  .overlay_add_contact_card,
+  .overlay_edit_contact_card {
+    flex-direction: column;
+    height: 90%;
+    width: 80%;
+    z-index: 12;
+  }
+
+  .overlay_add_contact_left_side {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40%;
+    border-radius: 30px 30px 0px 0px;
+  }
+
+  .overlay_headline_add_contact {
+    width: 80%;
+    margin: 0;
+    margin-left: 24px;
+  }
+
+  .overlay_account_icon_position {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+  }
+
+  .overlay_close_btn_position img {
+    top: -254px;
+    left: calc(92%);
+    transform: translate(0%, 0%);
+    background-color: aliceblue;
+  }
+
+  .overlay_add_contact_right_side {
+    width: 100%;
+    height: 60%;
+    border-radius: 0px 0px 30px 30px;
+  }
+
+  .form_input_fields_position {
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 48px);
+    height: 100px;
+  }
+
+  .overlay_btn_position {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav_position {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .link_nav_summary,
+  .link_nav_add_task,
+  .link_nav_board,
+  .link_nav_contacts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-radius: 16px;
+    width: 120px;
+  }
+
+  .link_nav_summary a,
+  .link_nav_add_task a,
+  .link_nav_board a,
+  .link_nav_contacts a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .scroll_layout {
+    margin: 32px 16px 112px 16px;
+    width: 100%;
+  }
+
+  .help_header {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .contact_headline {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .overlay_close_btn_position img {
+    left: calc(92% - 16px);
+    margin-right: 24px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .link_nav_summary,
+  .link_nav_add_task,
+  .link_nav_board,
+  .link_nav_contacts {
+    width: 80px !important;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .overlay_headline_add_contact h1 {
+    font-size: 40px;
+  }
+
+  .overlay_headline_add_contact h2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .nav_position a {
+    font-size: 12px !important;
+  }
+
+  .nav_position img {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .link_nav_summary,
+  .link_nav_add_task,
+  .link_nav_board,
+  .link_nav_contacts {
+    width: 65px !important;
+  }
+}
