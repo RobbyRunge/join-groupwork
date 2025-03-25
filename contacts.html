@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="./assets/icons/logo/joinLarge.png" type="image/x-icon" />
+
+    <script src="./scripts/submenu.js" defer></script>
+    <script src="./scripts/contacts.js" defer></script>
+    <script src="./scripts/contact_validation.js" defer></script>
+    <script src="./scripts/contact_template.js" defer></script>
+    <script src="./scripts/contact_overlay_animations.js"></script>
+    <script src="./scripts/aside.js" defer></script>
+    <script src="./scripts/submenu_initials.js" defer></script>
+    <script src="./scripts/checkActiveUser.js" defer></script>
+    <script src="./scripts/orientation.js" defer></script>
+
+    <link rel="stylesheet" href="./css/aside.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/standard.css" />
+    <link rel="stylesheet" href="./css/contacts.css" />
+    <link rel="stylesheet" href="./css/contact_list.css" />
+    <link rel="stylesheet" href="./css/contact_overlay_animation.css" />
+    <link rel="stylesheet" href="./css/submenu.css" />
+    <title>Contacts</title>
+  </head>
+  <body onload="init(), setAccountInitialsSubmenu(), checkUser()">
+    <header>
+      <div>
+        <img class="mobile_logo" src="./assets/icons/logo/JoinLogoMobile.svg" alt="" />
+        <h1>Kanban Project Managment Tool</h1>
+      </div>
+      <div class="question_marker_account_img_position">
+        <a href="help.html"><img class="question_marker transition" src="./assets/icons/imgs/questionMarker.svg" alt="" /></a>
+        <div class="account_circle transition" id="account_icon" onclick="toggleShowSubmenu()"></div>
+      </div>
+    </header>
+
+    <aside id="aside">
+      <div class="logo_position">
+        <img class="join_logo" src="./assets/icons/aside/joinLogo.svg" alt="Join_Logo" />
+      </div>
+      <div class="nav_position">
+        <div class="link_nav_summary cursor_pointer transition">
+          <a href="./summary.html"><img src="./assets/icons/aside/summary.svg" alt="Summary" />Summary</a>
+        </div>
+        <div class="link_nav_add_task cursor_pointer transition">
+          <a href="./add_task.html"><img src="./assets/icons/aside/addTask.svg" alt="Add Task" />Add Task</a>
+        </div>
+        <div class="link_nav_board cursor_pointer transition">
+          <a href="./board.html"><img src="./assets/icons/aside/board.svg" alt="Board" />Board</a>
+        </div>
+        <div class="link_nav_contacts cursor_pointer transition">
+          <a href="./contacts.html"><img src="./assets/icons/aside/contacts.svg" alt="Contacts" />Contacts</a>
+        </div>
+      </div>
+      <div class="legal_and_policy_position">
+        <div class="privacy_policy_login transition">
+          <a href="./privacy_policy_login.html">Privacy Policy</a>
+        </div>
+        <div class="legal_notice_login transition">
+          <a href="./legal_notice_login.html">Legal notice</a>
+        </div>
+      </div>
+    </aside>
+
+    <div id="submenu_position" class="d_none">
+      <div class="d_none help_submenu_section_responsive" onclick="window.location.href='./help.html'">
+        <a href="./help.html" class="submenu_links_design link_legal_notice_hover">Help</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='./legal_notice_login.html'">
+        <a href="./legal_notice_login.html" class="submenu_links_design link_legal_notice_hover">Legal Notice</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='./privacy_policy_login.html'">
+        <a href="./privacy_policy_login.html" class="submenu_links_design link_privacy_policy_hover">Privacy Policy</a>
+      </div>
+      <div class="submenu_section" onclick="logout()">
+        <a class="submenu_links_design link_login_hover" onclick="logout()">Log out</a>
+      </div>
+    </div>
+
+    <main>
+      <div class="contact_headline header_standard_size">
+        <h1>Contacts</h1>
+        <div class="line"></div>
+        <h2>Better with a Team</h2>
+        <div class="line_responsive"></div>
+      </div>
+      <section>
+        <div class="add_contact_btn_position">
+          <button class="add_contact_btn transition" onclick="openOverlayAddContact()">
+            Add new contact
+            <img src="./assets/icons/contacts/person_add.svg" alt="add_contact" />
+          </button>
+        </div>
+        <div class="content_width_contacts">
+          <div id="contact_list" class="contact_list_scrollbar"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="overlay_add_contacts_background"></div>
+
+    <div id="overlay_add_contact_card" class="d_none">
+      <div class="overlay_add_contact_left_side">
+        <div class="overlay_logo_position">
+          <img src="./assets/icons/logo/logo_white.svg" alt="logo" />
+        </div>
+        <div class="overlay_headline_add_contact">
+          <h1>Add contact</h1>
+          <h2>Tasks are better with a team!</h2>
+          <div class="line_contact"></div>
+        </div>
+      </div>
+      <div class="overlay_add_contact_right_side">
+        <div class="overlay_account_icon_position">
+          <img src="./assets/icons/contacts/account_icon.svg" alt="account_icon" />
+        </div>
+        <div class="overlay_close_btn_position">
+          <img onclick="closeOverlayAddContact()" src="./assets/icons/contacts/Close.svg" alt="close_button" />
+        </div>
+        <form novalidate class="form_input_fields_position" onsubmit="addContactToDataBase();  return false;">
+          <input type="text" id="add_name" placeholder="Name" />
+          <div id="name_error" class="error-message name_error_position"></div>
+          <input type="email" id="add_email" placeholder="Email" />
+          <div id="email_error" class="error-message email_error_position"></div>
+          <input type="number" id="add_phone" placeholder="Phone" />
+          <div id="phone_error" class="error-message phone_error_position"></div>
+          <div class="overlay_btn_position">
+            <button class="btn_cancel transition" type="button" onclick="closeOverlayAddContact()">Cancel <img src="./assets/icons/contacts/Close.svg" class="cancel_icon" alt="Cancel" /></button>
+            <button id="create_contact_enter" class="btn_create_contact transition" type="submit">Create contact <img src="./assets/icons/contacts/check.svg" alt="check" /></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="overlay_contact_infos" class="d_none"></div>
+
+    <div id="overlay_edit_contact_card" class="d_none"></div>
+
+    <div id="contact_successfully_created" class="d_none">Contact successfully created</div>
+
+    <div id="contact_successfully_edit" class="d_none">Contact successfully edited</div>
+
+    <div id="contact_successfully_deleted" class="d_none">Contact successfully deleted</div>
+
+    <button onclick="openOverlayAddContact()" class="respnsive_add_contact"><img src="./assets/icons/contacts/person_add.svg" alt="add_person" /></button>
+  </body>
+</html>

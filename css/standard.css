@@ -1,0 +1,117 @@
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter/static/Inter_18pt-Medium.ttf) format("woff2");
+}
+
+* {
+  scroll-behavior: smooth;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body.landscape {
+  position: relative;
+}
+
+body.landscape::before {
+  content: "🔄 Please rotate your device to portrait mode";
+  font-size: clamp(16px, 4vw, 24px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  background-color: rgb(246, 247, 248) !important;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.d_none {
+  display: none;
+}
+
+.header_standard_position {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding-top: 110px;
+  padding-left: 96px;
+}
+
+.header_standard_size h1 {
+  font-size: 61px;
+  margin: 0;
+}
+
+.header_standard_size h2 {
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.line {
+  border-left: 3px solid rgb(41, 171, 226);
+  height: 59px;
+}
+
+.cursor_pointer {
+  cursor: pointer;
+}
+
+.transition {
+  transition: all 125ms ease-in-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

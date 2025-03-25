@@ -1,0 +1,11 @@
+main {
+  padding-left: 232px;
+  background-color: rgb(246, 247, 248);
+  height: calc(100vh - 96px);
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    padding-left: 0px;
+  }
+}

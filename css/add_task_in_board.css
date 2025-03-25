@@ -1,0 +1,292 @@
+#overlayForAddTask {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  transition: background-color 125ms;
+}
+
+#add_task_box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1116px;
+  height: 760px;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  padding: 35px;
+  text-align: center;
+  border-radius: 25px;
+  z-index: 10;
+}
+
+#add_task_box::-webkit-scrollbar {
+  display: none;
+}
+
+.title_and_closeBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 38px 38px 38px;
+}
+
+.title_and_closeBtn button {
+  border: none;
+  padding: 0;
+  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: inherit;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.title_and_closeBtn button:hover {
+  background-color: rgb(238, 238, 238);
+  border: none;
+  border-radius: 50%;
+}
+
+.all_content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.chosen_contacts {
+  display: flex;
+}
+
+.prioBtn {
+  cursor: pointer;
+  width: 136px;
+  height: 56px;
+  border: solid 1px rgba(209, 209, 209, 0.37);
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.prioBtn:hover {
+  filter: drop-shadow(1px 4px 1px rgba(193, 193, 193, 0.247));
+}
+
+.no_hover:hover {
+  filter: drop-shadow(0px 0px 0px rgba(193, 193, 193, 0.247));
+}
+
+.inputFiledSubtask {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.hide_element {
+  display: none;
+}
+
+.subtask_paragraf {
+  margin-left: 30px;
+}
+
+.subtask_wrapper_board {
+  width: 440px;
+  height: 70px;
+  overflow-y: scroll;
+}
+
+.subtask_wrapper_board::-webkit-scrollbar {
+  display: none;
+}
+
+.iconContainerClose,
+.iconContainerCheck {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconContainerClose:hover,
+.iconContainerCheck:hover {
+  background-color: rgb(238, 238, 238);
+  border-radius: 50%;
+}
+
+.create_task_container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 50px;
+}
+
+.create_task_container p {
+  color: red;
+}
+
+.create_task_container h5 {
+  color: black;
+  display: flex;
+}
+
+.buttons_create_and_cancel {
+  display: flex;
+  gap: 30px;
+}
+
+.cancelBtn img {
+  transition: filter 125ms ease;
+}
+
+.cancelBtn:hover img {
+  filter: brightness(0) saturate(100%) invert(55%) sepia(75%) saturate(1619%) hue-rotate(165deg) brightness(92%) contrast(101%);
+}
+
+.cancelBtn {
+  border: solid 1px rgba(42, 54, 71, 1);
+  border-radius: 10px;
+  height: 56px;
+  width: 110px;
+  font-size: 20px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: white;
+}
+
+.cancelBtn:hover .icon-box {
+  content: url("../assets/icons/addTask/iconoir_cancel_hover.svg");
+}
+
+.cancelBtn:hover {
+  border: solid 1px rgba(41, 171, 226, 1);
+  box-shadow: 1px 4px rgba(0, 0, 0, 0.1);
+  color: rgba(41, 171, 226, 1);
+}
+
+.createBtn {
+  background-color: rgba(42, 54, 71, 1);
+  color: white;
+  border-radius: 10px;
+  width: 183px;
+  height: 56px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 21px;
+  border: none;
+}
+
+.createBtn:hover {
+  background-color: rgba(41, 171, 226, 1);
+  box-shadow: 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input_edit_subtask_board_section {
+  border: none;
+  outline: none;
+  width: 350px;
+}
+
+.h_effect:hover {
+  background-color: green;
+  cursor: pointer;
+}
+
+.new_sizes {
+  width: 440px;
+}
+
+.required {
+  color: rgb(255, 129, 144);
+  font-size: 0.78rem;
+}
+
+.required_color {
+  border: solid 1px rgb(255, 129, 144);
+}
+
+.task_added {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 326px;
+  height: 74px;
+  border-radius: 30px;
+  z-index: 1;
+  background-color: rgba(42, 54, 71, 1);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.msg_d_none {
+  display: none;
+}
+
+.no_space_between {
+  justify-content: unset;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+  background: #fff url(../assets/icons/addTask/typeDate.svg) 97% 50% no-repeat;
+}
+
+@media only screen and (max-width: 1600px) {
+  .title_and_closeBtn {
+    padding: 0 38px 38px 38px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  #add_task_box {
+    left: 58%;
+    width: 862px;
+    height: 760px;
+  }
+
+  .prioBtn {
+    width: 110px;
+    height: 49px;
+  }
+
+  .title_and_closeBtn {
+    padding: 0 38px 38px 38px;
+  }
+
+  .createBtn {
+    font-size: 16px;
+    width: 134px;
+    height: 49px;
+  }
+
+  .cancelBtn {
+    font-size: 16px;
+    width: 85px;
+    height: 49px;
+  }
+}

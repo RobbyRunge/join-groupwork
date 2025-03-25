@@ -1,0 +1,172 @@
+.sign_window {
+  display: none;
+  border: 1px transparent;
+  border-radius: 16px;
+  filter: drop-shadow(3px 3px 3px rgba(179, 179, 179, 0.9));
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  width: 415px;
+  height: 450px;
+  padding: 40px;
+}
+
+.center_title_and_underline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign_up_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.goBackArrowContainer {
+  position: absolute;
+  top: 70px;
+}
+
+#goBackArrow:hover {
+  cursor: pointer;
+  content: url(../assets/icons/help/arrow_hover.svg);
+  width: 35px;
+  height: 32px;
+}
+
+.signUp_underline {
+  border: 1px solid;
+  width: 90px;
+  height: 1px;
+  color: rgb(41, 171, 226);
+  background-color: rgb(41, 171, 226);
+  margin-bottom: 13px;
+}
+
+#name {
+  background: url("../assets/icons/login_and_signUp/person.svg") no-repeat right center;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px);
+}
+
+#signUpPassword,
+#signUpConfirmPassword {
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(209, 209, 209, 1);
+  outline: none;
+  font-size: 20px;
+  font-weight: 400;
+  box-sizing: border-box;
+  background-image: none;
+}
+
+#signUp_name_error {
+  position: absolute;
+  top: 180px;
+}
+
+#signUp_email_error {
+  position: absolute;
+  top: 245px;
+}
+
+#signUp_password_error {
+  position: absolute;
+  top: 310px;
+}
+
+#signUp_confirmPassword_error {
+  position: absolute;
+  top: 378px;
+}
+
+.form_btn_sign {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.privacy_police_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: small;
+  margin-top: 20px;
+}
+
+.privacy_police_content a {
+  color: rgb(41, 171, 226);
+  text-decoration: none;
+}
+
+#signUp_privacy_error {
+  position: absolute;
+  left: 0;
+  top: 435px;
+  transform: none;
+  text-align: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 850px) {
+  .sign_window {
+    top: 55%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sign_window {
+    width: 80%;
+  }
+}
+
+@media (max-height: 800px) {
+  .sign_window {
+    height: 430px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .sign_window {
+    padding: 20px;
+    padding-bottom: 40px;
+    width: 85%;
+  }
+
+  #signUp_name_error {
+    top: 160px;
+  }
+
+  #signUp_email_error {
+    top: 225px;
+  }
+
+  #signUp_password_error {
+    top: 290px;
+  }
+
+  #signUp_confirmPassword_error {
+    top: 358px;
+  }
+
+  #signUp_privacy_error {
+    top: 415px;
+  }
+}

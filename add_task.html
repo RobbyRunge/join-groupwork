@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="./assets/icons/logo/joinLarge.png" type="image/x-icon" />
+
+    <script src="./scripts/submenu.js" defer></script>
+    <script src="./scripts/add_task.js" defer></script>
+    <script src="./scripts/add_task_contacts.js" defer></script>
+    <script src="./scripts/add_task_template.js" defer></script>
+    <script src="./scripts/aside.js" defer></script>
+    <script src="./scripts/submenu_initials.js" defer></script>
+    <script src="./scripts/checkActiveUser.js" defer></script>
+    <script src="./scripts/write_edit_subtask.js" defer></script>
+    <script src="./scripts/write_edit_subtask_template.js" defer></script>
+    <script src="./scripts/orientation.js" defer></script>
+
+    <link rel="stylesheet" href="./css/aside.css" />
+    <link rel="stylesheet" href="./css/add_task.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/standard.css" />
+    <link rel="stylesheet" href="./css/submenu.css" />
+
+    <title>Add Task</title>
+  </head>
+  <body onload="render(), setAccountInitialsSubmenu(), checkUser(), disablePast();">
+    <header>
+      <div>
+        <img class="mobile_logo" src="./assets/icons/logo/JoinLogoMobile.svg" alt="" />
+        <h1>Kanban Project Managment Tool</h1>
+      </div>
+      <div class="question_marker_account_img_position">
+        <a href="help.html"><img class="question_marker transition" src="./assets/icons/imgs/questionMarker.svg" alt="" /></a>
+        <div class="account_circle transition" id="account_icon" onclick="toggleShowSubmenu()"></div>
+      </div>
+    </header>
+    <aside id="aside">
+      <div class="logo_position">
+        <img class="join_logo" src="./assets/icons/aside/joinLogo.svg" alt="Join_Logo" />
+      </div>
+      <div class="nav_position">
+        <div class="link_nav_summary cursor_pointer transition">
+          <a href="./summary.html"><img src="./assets/icons/aside/summary.svg" alt="Summary" />Summary</a>
+        </div>
+        <div class="link_nav_add_task cursor_pointer transition">
+          <a href="./add_task.html"><img src="./assets/icons/aside/addTask.svg" alt="Add Task" />Add Task</a>
+        </div>
+        <div class="link_nav_board cursor_pointer transition">
+          <a href="./board.html"><img src="./assets/icons/aside/board.svg" alt="Board" />Board</a>
+        </div>
+        <div class="link_nav_contacts cursor_pointer transition">
+          <a href="./contacts.html"><img src="./assets/icons/aside/contacts.svg" alt="Contacts" />Contacts</a>
+        </div>
+      </div>
+      <div class="legal_and_policy_position">
+        <div class="privacy_policy_login transition">
+          <a href="./privacy_policy_login.html">Privacy Policy</a>
+        </div>
+        <div class="legal_notice_login transition">
+          <a href="./legal_notice_login.html">Legal notice</a>
+        </div>
+      </div>
+    </aside>
+
+    <div id="submenu_position" class="d_none">
+      <div class="d_none help_submenu_section_responsive" onclick="window.location.href='./help.html'">
+        <a href="./help.html" class="submenu_links_design link_legal_notice_hover">Help</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='./legal_notice_login.html'">
+        <a href="./legal_notice_login.html" class="submenu_links_design link_legal_notice_hover">Legal Notice</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='./privacy_policy_login.html'">
+        <a href="./privacy_policy_login.html" class="submenu_links_design link_privacy_policy_hover">Privacy Policy</a>
+      </div>
+      <div class="submenu_section" onclick="logout()">
+        <a class="submenu_links_design link_login_hover" onclick="logout()">Log out</a>
+      </div>
+    </div>
+
+    <main>
+      <div id="form" class="task">
+        <h1 class="mobile_view">Add Task</h1>
+        <div class="task-wrapper">
+          <h1>Add Task</h1>
+          <div class="flex-container">
+            <div class="input-container">
+              <div id="title-container" class="inputfield-title-container title">
+                <span class="display-flex"
+                  ><p class="display-flex tasktitles">Title</p>
+                  <p class="color-red tasktitles">*</p></span
+                >
+                <div class="column">
+                  <input oninput="checkRequiredTitle()" class="inputfield" id="title" maxlength="60" placeholder="Enter a title" type="text" required />
+                  <div id="required-title" class="required_text display_none">This field is required</div>
+                </div>
+              </div>
+              <div class="inputfield-title-container">
+                <p class="tasktitles">Description</p>
+                <textarea class="textareafield" id="description" placeholder="Enter a Description" name="Description"></textarea>
+              </div>
+              <div class="inputfield-title-container">
+                <p class="tasktitles">Assigned to</p>
+                <div id="contact-wrapper">
+                  <div onclick="openContactList()" id="contact-input-border" class="subtask-inputfield">
+                    <input oninput="searchContacts()" id="contact-input" placeholder="select contacts to assign" class="subtask-inputfield-text" type="text" />
+                    <div id="contact-input-field" class="subtask-button-container">
+                      <img class="icon-drop-down" src="assets/icons/addTask/arrow_drop_downaa (1).svg" alt="" />
+                    </div>
+                  </div>
+                  <div id="contact-list" class="contact-wrapper display_none"></div>
+                  <div class="assigned-contact-wrapper" id="assigned"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pixelbar"></div>
+            <div class="input-container">
+              <div id="date-container" lang="en" class="inputfield-title-container">
+                <label for="date" class="display-flex"
+                  ><p class="tasktitles">Due date</p>
+                  <p class="color-red tasktitles">*</p></label
+                >
+                <div class="column">
+                  <input oninput="checkRequiredDate()" lang="en" class="inputfield" id="date" type="date" placeholder="dd/mm/yyyy" required />
+                  <div id="required-date" class="required_text display_none">This field is required</div>
+                </div>
+              </div>
+              <div class="inputfield-title-container">
+                <p class="tasktitles">Prio</p>
+                <div class="button-container">
+                  <button type="button" onclick="setPrio('urgent')" id="urgent" class="urgentbutton transition">
+                    Urgent
+                    <div id="iconurgent" class="prio_icon"><img class="urgent-img" src="assets/icons/addTask/icon_urgent.svg" alt="" /></div>
+                  </button>
+                  <button type="button" onclick="setPrio('medium')" id="medium" class="urgentbutton transition">
+                    Medium
+                    <div id="iconmedium" class="prio_icon"><img src="assets/icons/addTask/icon_medium.svg" alt="" /></div>
+                  </button>
+                  <button type="button" onclick="setPrio('low')" id="low" class="urgentbutton transition">
+                    Low
+                    <div id="iconlow" class="prio_icon"><img src="assets/icons/addTask/icon_low.svg" alt="" /></div>
+                  </button>
+                </div>
+              </div>
+              <div id="category-container" class="inputfield-title-container">
+                <span class="display-flex"
+                  ><p class="tasktitles">Category</p>
+                  <p class="color-red tasktitles">*</p></span
+                >
+                <div id="catecory-wrapper">
+                  <div onclick="openCatecoryList()" id="catecory-input-border" class="subtask-inputfield">
+                    <input readonly id="catecory-input" placeholder="select contacts to assign" class="subtask-inputfield-text" type="text" />
+                    <div id="catecory-input-field" class="subtask-button-container">
+                      <img class="icon-drop-down" src="assets/icons/addTask/arrow_drop_downaa (1).svg" alt="" />
+                    </div>
+                  </div>
+                  <div id="catecory-list" class="catecory-wrapper display_none">
+                    <div onclick="addCatecory(1)" id="catecory1" class="contactlist">Technical Task</div>
+                    <div onclick="addCatecory(2)" id="catecory2" class="contactlist">User Story</div>
+                  </div>
+                  <div id="required-category" class="required_text display_none">This field is required</div>
+                </div>
+              </div>
+              <div class="inputfield-title-container space_for_subtask">
+                <p class="tasktitles">Subtasks</p>
+                <div onclick="borderFocus()" id="subtusk-input-border" class="subtask-inputfield">
+                  <input id="subtask" class="subtask-inputfield-text" placeholder="Add new subtask" oninput="writeSubtask()" type="text" />
+                  <div id="subtaskbuttons" class="subtask-button-container">
+                    <button class="subtask-inputfield-button">
+                      <img src="assets/icons/addTask/subtasks_icons.svg" alt="" />
+                    </button>
+                  </div>
+                </div>
+                <div id="tasks-wrapper" class="subtask-wrapper"></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-container">
+            <span class="display-flex"
+              ><p class="color-red">*</p>
+              <p>This field is required</p></span
+            >
+            <div class="button-container-clear-creat">
+              <button type="button" class="clear-button transition" onclick="clearAllTasks()">
+                Clear
+                <div class="icon-box"></div>
+              </button>
+              <button type="submit" class="great-button transition" onclick="checkRequiredField()">Creat Task <img src="assets/icons/addTask/check.svg" alt="" /></button>
+            </div>
+          </div>
+        </div>
+        <div id="finish-box" class="finish-container">
+          <p>Task added to board</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-EN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="shortcut icon" href="./assets/icons/logo/joinLarge.png" type="image/x-icon" />
+
+    <script src="./scripts/submenu.js" defer></script>
+    <script src="./scripts/summary.js" defer></script>
+    <script src="./scripts/aside.js" defer></script>
+    <script src="./scripts/submenu_initials.js" defer></script>
+    <script src="./scripts/checkActiveUser.js" defer></script>
+    <script src="./scripts/orientation.js" defer></script>
+
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/aside.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/standard.css" />
+    <link rel="stylesheet" href="./css/summary.css" />
+    <link rel="stylesheet" href="./css/submenu.css" />
+    <link rel="stylesheet" href="./css/summary_responsive.css" />
+    <title>Summary</title>
+  </head>
+  <body onload="init(), setAccountInitialsSubmenu(), checkUser()">
+    <header>
+      <div>
+        <img class="mobile_logo" src="./assets/icons/logo/JoinLogoMobile.svg" alt="" />
+        <h1>Kanban Project Managment Tool</h1>
+      </div>
+      <div class="question_marker_account_img_position">
+        <a href="help.html"><img class="question_marker transition" src="./assets/icons/imgs/questionMarker.svg" alt="" /></a>
+        <div class="account_circle transition" id="account_icon" onclick="toggleShowSubmenu()"></div>
+      </div>
+    </header>
+
+    <aside id="aside">
+      <div class="logo_position">
+        <img class="join_logo" src="./assets/icons/aside/joinLogo.svg" alt="Join_Logo" />
+      </div>
+      <div class="nav_position">
+        <div class="link_nav_summary cursor_pointer transition">
+          <a href="./summary.html"><img src="./assets/icons/aside/summary.svg" alt="Summary" />Summary</a>
+        </div>
+        <div class="link_nav_add_task cursor_pointer transition">
+          <a href="./add_task.html"><img src="./assets/icons/aside/addTask.svg" alt="Add Task" />Add Task</a>
+        </div>
+        <div class="link_nav_board cursor_pointer transition">
+          <a href="./board.html"><img src="./assets/icons/aside/board.svg" alt="Board" />Board</a>
+        </div>
+        <div class="link_nav_contacts cursor_pointer transition">
+          <a href="./contacts.html"><img src="./assets/icons/aside/contacts.svg" alt="Contacts" />Contacts</a>
+        </div>
+      </div>
+      <div class="legal_and_policy_position">
+        <div class="privacy_policy_login transition">
+          <a href="./privacy_policy_login.html">Privacy Policy</a>
+        </div>
+        <div class="legal_notice_login transition">
+          <a href="./legal_notice_login.html">Legal notice</a>
+        </div>
+      </div>
+    </aside>
+
+    <div id="submenu_position" class="d_none">
+      <div class="d_none help_submenu_section_responsive" onclick="window.location.href='./help.html'">
+        <a href="./help.html" class="submenu_links_design link_legal_notice_hover">Help</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='./legal_notice_login.html'">
+        <a href="./legal_notice_login.html" class="submenu_links_design link_legal_notice_hover">Legal Notice</a>
+      </div>
+      <div class="submenu_section" onclick="window.location.href='./privacy_policy_login.html'">
+        <a href="./privacy_policy_login.html" class="submenu_links_design link_privacy_policy_hover">Privacy Policy</a>
+      </div>
+      <div class="submenu_section" onclick="logout()">
+        <a class="submenu_links_design link_login_hover" onclick="logout()">Log out</a>
+      </div>
+    </div>
+
+    <main>
+      <div id="welcome_message" class="greetings_position">
+        <p>
+          <span id="time_message"></span> <br />
+          <span class="account_name"></span>
+        </p>
+      </div>
+
+      <div class="main_content">
+        <div class="header_standard_position header_standard_size">
+          <h1>Join 360</h1>
+          <div class="line"></div>
+          <h2>Key Metrics at a Glance</h2>
+          <div class="line_responsive"></div>
+        </div>
+        <div class="dashboard">
+          <div class="to_do_and_done" onclick="window.location.href = './board.html'">
+            <div class="box_to_do transition">
+              <img class="dashboard_img_size_pen" src="./assets/icons/summary/pen.svg" alt="" />
+              <div class="column">
+                <div class="box_number_size" id="current_number_to_do"></div>
+                <div class="box_text_size">To-do</div>
+              </div>
+            </div>
+
+            <div class="box_done transition" onclick="window.location.href = './board.html'">
+              <img class="dashboard_img_size_hook" src="./assets/icons/summary/hook.svg" alt="" />
+              <div class="column">
+                <div class="box_number_size" id="current_number_done"></div>
+                <div class="box_text_size">Done</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="urgency_summary transition" onclick="window.location.href = './board.html'">
+            <div class="box_urgency_summary">
+              <div class="img_and_text_summary">
+                <img class="dashboard_img_size" src="./assets/icons/summary/urgent.svg" alt="" />
+                <div class="column">
+                  <div class="box_number_size" id="current_number_urgent"></div>
+                  <div class="box_text_size">Urgent</div>
+                </div>
+              </div>
+              <div class="line_urgency"></div>
+              <div class="date_text_deadline_gap">
+                <div class="date_deadline"></div>
+                <div class="text_deadline"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tasks_info" onclick="window.location.href = './board.html'">
+            <div class="box_tasks_in_board transition">
+              <div class="column">
+                <div class="box_number_size" id="current_number_tasks_in_board"></div>
+                <div class="box_text_size">Tasks in<br />Board</div>
+              </div>
+            </div>
+            <div class="box_tasks_in_progress transition">
+              <div class="column">
+                <div class="box_number_size" id="current_number_tasks_in_progress"></div>
+                <div class="box_text_size">Tasks in<br />Progress</div>
+              </div>
+            </div>
+            <div class="box_awating_feedback transition">
+              <div class="column">
+                <div class="box_number_size" id="current_number_awaiting_feedback"></div>
+                <div class="box_text_size">Awaiting<br />Feedback</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
