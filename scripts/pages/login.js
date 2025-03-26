@@ -3,31 +3,26 @@
  * @const {string}
  */
 const BASE_URL = "https://join-16440-default-rtdb.europe-west1.firebasedatabase.app/";
-
 /**
  * Reference to the login button element.
  * @const {HTMLElement}
  */
 const refLoginButton = document.querySelector("#login_btn");
-
 /**
  * Reference to the password input element.
  * @const {HTMLInputElement}
  */
 const passwordInput = document.getElementById("loginPassword");
-
 /**
  * Reference to the toggle password icon element.
  * @const {HTMLImageElement}
  */
 const togglePassword = document.getElementById("togglePassword");
-
 /**
  * User's email address.
  * @type {string}
  */
 let email;
-
 /**
  * User's password.
  * @type {string}
@@ -118,7 +113,7 @@ function findUserByEmail(users, email) {
 function authenticateUser(userKey) {
   localStorage.setItem("userId", userKey);
   localStorage.removeItem("isGuest");
-  window.location.href = "../../pages/summary/summary.html";
+  window.location.href = "../../../modul-10.1-join/pages/summary/summary.html";
 }
 
 /**
@@ -133,11 +128,11 @@ refLoginButton.addEventListener("click", getDataFromLogin);
  * @listens {DOMContentLoaded}
  */
 document.addEventListener("DOMContentLoaded", function () {
-  const guestLogButton = document.querySelector("#guest_log");
+  const guestLogButton = document.querySelector("#guest_log");  
   if (guestLogButton) {
     guestLogButton.onclick = function () {
       localStorage.setItem("userId", "guest");
-      window.location.href = "../../pages/summary/summary.html";
+      window.location.href = "../../../modul-10.1-join/pages/summary/summary.html";
     };
   }
 });

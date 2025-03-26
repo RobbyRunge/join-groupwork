@@ -91,9 +91,10 @@ h5 {
   display: flex;
   justify-content: space-between;
   padding-left: 10px;
-  width: auto;
+  width: 100%;
   gap: 3px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .board_content::-webkit-scrollbar {
@@ -111,7 +112,7 @@ h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 100%;
 }
 
 .plus_button {
@@ -377,10 +378,6 @@ input[type="search"]::-webkit-search-results-decoration {
     left: 57%;
   }
 
-  .banner {
-    width: 90%;
-  }
-
   #toDo,
   #progress,
   #feedback,
@@ -433,7 +430,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
   .board_content {
     gap: 0px;
-    width: 800px;
   }
 }
 
@@ -568,6 +564,8 @@ input[type="search"]::-webkit-search-results-decoration {
   .board_content {
     flex-direction: column;
     display: flex;
+    width: 100%;
+    padding-left: 0;
   }
 
   h3 {
@@ -576,7 +574,7 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 
   .board_column {
-    width: 100%;
+    width: calc(100% - 12px);
   }
 
   .card {
