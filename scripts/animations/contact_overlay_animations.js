@@ -165,7 +165,6 @@ function closeOverlayEditContact() {
       overlayCardRef.style.animation = "";
       overlayRef.style.backgroundColor = "";
       clearErrorMessages();
-      setTimeoutSuccessfullyOverlayEdit();
       setTimeout(() => {
         openContactInfoAfterEdit(lastEditedContactId);
       }, 1000);
