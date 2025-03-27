@@ -30,7 +30,7 @@
 
 .scroll_layout {
   gap: 24px;
-  margin: 110px 0 110px 96px;
+  margin: 220px 0 110px 96px;
   overflow-y: scroll;
 }
 
@@ -81,7 +81,7 @@ h2 {
 
   .scroll_layout {
     width: auto;
-    margin: 110px 40px 110px 96px;
+    margin: 220px 40px 110px 96px;
   }
 
   .legal {
@@ -91,7 +91,7 @@ h2 {
 
 @media only screen and (max-width: 1200px) {
   .scroll_layout {
-    margin: 32px 24px 112px 24px;
+    margin: 128px 24px 112px 24px;
     padding-bottom: 40px;
   }
 
