@@ -94,7 +94,7 @@ function displaySelectedPriority(data) {
     let element = document.getElementById(data);
     element.style.backgroundColor = priorityMap[data].color;
     element.style.color = "white";
-    document.getElementById(`${data}ImageEditBtn`).src = `./assets/icons/addTask/${priorityMap[data].img}`;
+    document.getElementById(`${data}ImageEditBtn`).src = `../../assets/icons/addTask/${priorityMap[data].img}`;
     element.classList.add("no_hover");
   }
 }
