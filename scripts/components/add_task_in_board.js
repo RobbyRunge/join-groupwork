@@ -137,7 +137,7 @@ function unselect(id) {
 function focusTheField() {
   const inputSubtask = document.querySelector("#subtask");
   inputSubtask.focus();
-  document.querySelector(".subtask-inputfield-button").classList.toggle("hide_element");
+  document.querySelector(".subtask_inputfield_button").classList.toggle("hide_element");
   document.querySelector(".inputFiledSubtask").classList.toggle("hide_element");
   inputSubtask.value = "";
   setEventListenerForSubtask();
@@ -148,7 +148,7 @@ function focusTheField() {
  */
 function closeInputField() {
   const inputSubtask = document.querySelector("#subtask");
-  document.querySelector(".subtask-inputfield-button").classList.toggle("hide_element");
+  document.querySelector(".subtask_inputfield_button").classList.toggle("hide_element");
   document.querySelector(".inputFiledSubtask").classList.toggle("hide_element");
   inputSubtask.value = "";
 }
@@ -158,7 +158,7 @@ function closeInputField() {
  */
 function newSubtask() {
   const inputSubtask = document.querySelector("#subtask");
-  document.querySelector("#tasks-wrapper").innerHTML += HTMLTamplateForSubtasksInAddTaskBoard(inputSubtask.value);
+  document.querySelector("#tasks_wrapper").innerHTML += HTMLTamplateForSubtasksInAddTaskBoard(inputSubtask.value);
   inputSubtask.value = "";
   closeInputField();
 }
@@ -204,7 +204,7 @@ function confirmEditing(event) {
   let task = event.currentTarget.parentElement.parentElement.parentElement;
   let inputField = document.querySelector(".edit_subtask_input_field input");
   task.remove();
-  document.querySelector("#tasks-wrapper").innerHTML += HTMLTamplateForSubtasksInAddTaskBoard(inputField.value);
+  document.querySelector("#tasks_wrapper").innerHTML += HTMLTamplateForSubtasksInAddTaskBoard(inputField.value);
 }
 
 /**

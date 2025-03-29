@@ -86,56 +86,56 @@
     <main>
       <div id="form" class="task">
         <h1 class="mobile_view">Add Task</h1>
-        <div class="task-wrapper">
+        <div class="task_wrapper">
           <h1>Add Task</h1>
-          <div class="flex-container">
-            <div class="input-container">
-              <div id="title-container" class="inputfield-title-container title">
-                <span class="display-flex"
-                  ><p class="display-flex tasktitles">Title</p>
-                  <p class="color-red tasktitles">*</p></span
+          <div class="flex_container">
+            <div class="input_container">
+              <div id="title_container" class="inputfield_title_container title">
+                <span class="display_flex"
+                  ><p class="display_flex tasktitles">Title</p>
+                  <p class="color_red tasktitles">*</p></span
                 >
                 <div class="column">
                   <input oninput="checkRequiredTitle()" class="inputfield" id="title" maxlength="60" placeholder="Enter a title" type="text" required />
-                  <div id="required-title" class="required_text display_none">This field is required</div>
+                  <div id="required_title" class="required_text display_none">This field is required</div>
                 </div>
               </div>
-              <div class="inputfield-title-container">
+              <div class="inputfield_title_container">
                 <p class="tasktitles">Description</p>
                 <textarea class="textareafield" id="description" placeholder="Enter a Description" name="Description"></textarea>
               </div>
-              <div class="inputfield-title-container">
+              <div class="inputfield_title_container">
                 <p class="tasktitles">Assigned to</p>
-                <div id="contact-wrapper">
-                  <div onclick="openContactList()" id="contact-input-border" class="subtask-inputfield">
-                    <input oninput="searchContacts()" id="contact-input" placeholder="select contacts to assign" class="subtask-inputfield-text" type="text" />
-                    <div id="contact-input-field" class="subtask-button-container">
-                      <img class="icon-drop-down" src="../../assets/icons/addTask/arrow_drop_downaa (1).svg" alt="" />
+                <div id="contact_wrapper">
+                  <div onclick="openContactList()" id="contact_input_border" class="subtask_inputfield">
+                    <input oninput="searchContacts()" id="contact_input" placeholder="select contacts to assign" class="subtask_inputfield_text" type="text" />
+                    <div id="contact_input_field" class="subtask_button_container">
+                      <img class="icon_drop_down" src="../../assets/icons/addTask/arrow_drop_downaa (1).svg" alt="" />
                     </div>
                   </div>
-                  <div id="contact-list" class="contact-wrapper display_none"></div>
-                  <div class="assigned-contact-wrapper" id="assigned"></div>
+                  <div id="contact_list" class="contact_wrapper display_none"></div>
+                  <div class="assigned_contact_wrapper" id="assigned"></div>
                 </div>
               </div>
             </div>
             <div class="pixelbar"></div>
-            <div class="input-container">
-              <div id="date-container" lang="en" class="inputfield-title-container">
-                <label for="date" class="display-flex"
+            <div class="input_container">
+              <div id="date_container" lang="en" class="inputfield_title_container">
+                <label for="date" class="display_flex"
                   ><p class="tasktitles">Due date</p>
-                  <p class="color-red tasktitles">*</p></label
+                  <p class="color_red tasktitles">*</p></label
                 >
                 <div class="column">
                   <input oninput="checkRequiredDate()" lang="en" class="inputfield" id="date" type="date" placeholder="dd/mm/yyyy" required />
-                  <div id="required-date" class="required_text display_none">This field is required</div>
+                  <div id="required_date" class="required_text display_none">This field is required</div>
                 </div>
               </div>
-              <div class="inputfield-title-container">
+              <div class="inputfield_title_container">
                 <p class="tasktitles">Prio</p>
-                <div class="button-container">
+                <div class="button_container">
                   <button type="button" onclick="setPrio('urgent')" id="urgent" class="urgentbutton transition">
                     Urgent
-                    <div id="iconurgent" class="prio_icon"><img class="urgent-img" src="../../assets/icons/addTask/icon_urgent.svg" alt="" /></div>
+                    <div id="iconurgent" class="prio_icon"><img class="urgent_img" src="../../assets/icons/addTask/icon_urgent.svg" alt="" /></div>
                   </button>
                   <button type="button" onclick="setPrio('medium')" id="medium" class="urgentbutton transition">
                     Medium
@@ -147,54 +147,54 @@
                   </button>
                 </div>
               </div>
-              <div id="category-container" class="inputfield-title-container">
-                <span class="display-flex"
+              <div id="category_container" class="inputfield_title_container">
+                <span class="display_flex"
                   ><p class="tasktitles">Category</p>
-                  <p class="color-red tasktitles">*</p></span
+                  <p class="color_red tasktitles">*</p></span
                 >
-                <div id="catecory-wrapper">
-                  <div onclick="openCatecoryList()" id="catecory-input-border" class="subtask-inputfield">
-                    <input readonly id="catecory-input" placeholder="select contacts to assign" class="subtask-inputfield-text" type="text" />
-                    <div id="catecory-input-field" class="subtask-button-container">
-                      <img class="icon-drop-down" src="../../assets/icons/addTask/arrow_drop_downaa (1).svg" alt="" />
+                <div id="catecory_wrapper">
+                  <div onclick="openCatecoryList()" id="catecory_input_border" class="subtask_inputfield">
+                    <input readonly id="catecory_input" placeholder="select contacts to assign" class="subtask_inputfield_text" type="text" />
+                    <div id="catecory_input_field" class="subtask_button_container">
+                      <img class="icon_drop_down" src="../../assets/icons/addTask/arrow_drop_downaa (1).svg" alt="" />
                     </div>
                   </div>
-                  <div id="catecory-list" class="catecory-wrapper display_none">
+                  <div id="catecory_list" class="catecory_wrapper display_none">
                     <div onclick="addCatecory(1)" id="catecory1" class="contactlist">Technical Task</div>
                     <div onclick="addCatecory(2)" id="catecory2" class="contactlist">User Story</div>
                   </div>
-                  <div id="required-category" class="required_text display_none">This field is required</div>
+                  <div id="required_category" class="required_text display_none">This field is required</div>
                 </div>
               </div>
-              <div class="inputfield-title-container space_for_subtask">
+              <div class="inputfield_title_container space_for_subtask">
                 <p class="tasktitles">Subtasks</p>
-                <div onclick="borderFocus()" id="subtusk-input-border" class="subtask-inputfield">
-                  <input id="subtask" class="subtask-inputfield-text" placeholder="Add new subtask" oninput="writeSubtask()" type="text" />
-                  <div id="subtaskbuttons" class="subtask-button-container">
-                    <button class="subtask-inputfield-button">
+                <div onclick="borderFocus()" id="subtusk_input_border" class="subtask_inputfield">
+                  <input id="subtask" class="subtask_inputfield_text" placeholder="Add new subtask" oninput="writeSubtask()" type="text" />
+                  <div id="subtaskbuttons" class="subtask_button_container">
+                    <button class="subtask_inputfield_button">
                       <img src="../../assets/icons/addTask/subtasks_icons.svg" alt="" />
                     </button>
                   </div>
                 </div>
-                <div id="tasks-wrapper" class="subtask-wrapper"></div>
+                <div id="tasks_wrapper" class="subtask_wrapper"></div>
               </div>
             </div>
           </div>
-          <div class="footer-container">
-            <span class="display-flex"
-              ><p class="color-red">*</p>
+          <div class="footer_container">
+            <span class="display_flex"
+              ><p class="color_red">*</p>
               <p>This field is required</p></span
             >
-            <div class="button-container-clear-creat">
-              <button type="button" class="clear-button transition" onclick="clearAllTasks()">
+            <div class="button_container_clear_creat">
+              <button type="button" class="clear_button transition" onclick="clearAllTasks()">
                 Clear
-                <div class="icon-box"></div>
+                <div class="icon_box"></div>
               </button>
-              <button type="submit" class="great-button transition" onclick="checkRequiredField()">Creat Task <img src="../../assets/icons/addTask/check.svg" alt="" /></button>
+              <button type="submit" class="great_button transition" onclick="checkRequiredField()">Creat Task <img src="../../assets/icons/addTask/check.svg" alt="" /></button>
             </div>
           </div>
         </div>
-        <div id="finish-box" class="finish-container">
+        <div id="finish_box" class="finish_container">
           <p>Task added to board</p>
         </div>
       </div>

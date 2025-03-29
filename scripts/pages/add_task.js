@@ -56,12 +56,12 @@ function resetPrioButton() {
  * @returns {void}
  */
 function openCatecoryList() {
-  let categoryList = document.getElementById("catecory-list");
-  let inputBorder = document.getElementById("catecory-input-border");
-  let inputField = document.getElementById("catecory-input-field");
+  let categoryList = document.getElementById("catecory_list");
+  let inputBorder = document.getElementById("catecory_input_border");
+  let inputField = document.getElementById("catecory_input_field");
   if (categoryList.classList.contains("visible")) return closeCatecoryList();
-  inputBorder.classList.add("subtask-inputfield-focus");
-  inputField.innerHTML = `<img class="icon-drop-down" src="../../assets/icons/addTask/arrow_drop_downaa.svg" alt="">`;
+  inputBorder.classList.add("subtask_inputfield_focus");
+  inputField.innerHTML = `<img class="icon_drop_down" src="../../assets/icons/addTask/arrow_drop_downaa.svg" alt="">`;
   categoryList.classList.remove("display_none");
   if (categoryFirstOpen) {
     void categoryList.offsetWidth;
@@ -88,8 +88,8 @@ function showCategoryList(categoryList) {
  * @returns {void}
  */
 function handleOutsideClick(event) {
-  let categoryList = document.getElementById("catecory-list");
-  let inputBorder = document.getElementById("catecory-input-border");
+  let categoryList = document.getElementById("catecory_list");
+  let inputBorder = document.getElementById("catecory_input_border");
   if (!categoryList.contains(event.target) && !inputBorder.contains(event.target)) {
     closeCatecoryList();
     document.removeEventListener("click", handleOutsideClick);
@@ -101,12 +101,12 @@ function handleOutsideClick(event) {
  * @returns {void}
  */
 function closeCatecoryList() {
-  let categoryList = document.getElementById("catecory-list");
-  let inputBorder = document.getElementById("catecory-input-border");
-  let inputField = document.getElementById("catecory-input-field");
-  inputBorder.classList.remove("subtask-inputfield-focus");
+  let categoryList = document.getElementById("catecory_list");
+  let inputBorder = document.getElementById("catecory_input_border");
+  let inputField = document.getElementById("catecory_input_field");
+  inputBorder.classList.remove("subtask_inputfield_focus");
   inputField.innerHTML = `
-    <img class="icon-drop-down" src="../../assets/icons/addTask/arrow_drop_downaa (1).svg" alt="">`;
+    <img class="icon_drop_down" src="../../assets/icons/addTask/arrow_drop_downaa (1).svg" alt="">`;
   categoryList.classList.remove("visible");
   setTimeout(() => {
     categoryList.classList.add("display_none");
@@ -120,7 +120,7 @@ function closeCatecoryList() {
  * @returns {void}
  */
 function addCatecory(categoryNum) {
-  let categoryInput = document.getElementById("catecory-input");
+  let categoryInput = document.getElementById("catecory_input");
   if (categoryNum === 1) {
     categoryInput.value = "Technical Task";
   } else if (categoryNum === 2) {
@@ -128,7 +128,7 @@ function addCatecory(categoryNum) {
   }
   checkRequiredcategory();
   closeCatecoryList();
-  document.getElementById("required-category").classList.add("display_none");
+  document.getElementById("required_category").classList.add("display_none");
 }
 
 /**
@@ -136,7 +136,7 @@ function addCatecory(categoryNum) {
  * @returns {void}
  */
 function invisibleCategoryPlaceholder() {
-  document.getElementById("category-placeholder").classList.add("display_none");
+  document.getElementById("category_placeholder").classList.add("display_none");
 }
 
 /**
@@ -156,12 +156,12 @@ function checkRequiredField() {
  * Set all Required field invisible.
  */
 function setRequiredInvisible() {
-  document.getElementById("required-title").classList.add("display_none");
-  document.getElementById("title").classList.remove("inputfield-required");
-  document.getElementById("required-date").classList.add("display_none");
-  document.getElementById("date").classList.remove("inputfield-required");
-  document.getElementById("required-category").classList.add("display_none");
-  document.getElementById("catecory-input-border").classList.remove("inputfield-required");
+  document.getElementById("required_title").classList.add("display_none");
+  document.getElementById("title").classList.remove("inputfield_required");
+  document.getElementById("required_date").classList.add("display_none");
+  document.getElementById("date").classList.remove("inputfield_required");
+  document.getElementById("required_category").classList.add("display_none");
+  document.getElementById("catecory_input_border").classList.remove("inputfield_required");
 }
 
 /**
@@ -171,14 +171,14 @@ function setRequiredInvisible() {
 function checkRequiredTitle() {
   let title = document.getElementById("title");
   if (title.value === "") {
-    document.getElementById("required-title").classList.remove("display_none");
-    title.classList.add("inputfield-required");
-    document.getElementById("title-container").classList.add("margin-15px");
+    document.getElementById("required_title").classList.remove("display_none");
+    title.classList.add("inputfield_required");
+    document.getElementById("title_container").classList.add("margin_15px");
     requiredTitle = false;
   } else {
     requiredTitle = true;
-    document.getElementById("required-title").classList.add("display_none");
-    title.classList.remove("inputfield-required");
+    document.getElementById("required_title").classList.add("display_none");
+    title.classList.remove("inputfield_required");
   }
 }
 
@@ -189,13 +189,13 @@ function checkRequiredTitle() {
 function checkRequiredDate() {
   let date = document.getElementById("date");
   if (date.value === "") {
-    document.getElementById("required-date").classList.remove("display_none");
-    date.classList.add("inputfield-required");
-    document.getElementById("date-container").classList.add("margin-15px");
+    document.getElementById("required_date").classList.remove("display_none");
+    date.classList.add("inputfield_required");
+    document.getElementById("date_container").classList.add("margin_15px");
   } else {
     requiredDate = true;
-    document.getElementById("required-date").classList.add("display_none");
-    date.classList.remove("inputfield-required");
+    document.getElementById("required_date").classList.add("display_none");
+    date.classList.remove("inputfield_required");
   }
 }
 
@@ -204,15 +204,15 @@ function checkRequiredDate() {
  * @returns {void}
  */
 function checkRequiredcategory() {
-  let category = document.getElementById("catecory-input");
+  let category = document.getElementById("catecory_input");
   if (category.value === "") {
-    document.getElementById("required-category").classList.remove("display_none");
-    document.getElementById("catecory-input-border").classList.add("inputfield-required");
-    document.getElementById("category-container").classList.add("margin-15px");
+    document.getElementById("required_category").classList.remove("display_none");
+    document.getElementById("catecory_input_border").classList.add("inputfield_required");
+    document.getElementById("category_container").classList.add("margin_15px");
   } else {
     requiredCategory = true;
-    document.getElementById("required-category").classList.add("display_none");
-    document.getElementById("catecory-input-border").classList.remove("inputfield-required");
+    document.getElementById("required_category").classList.add("display_none");
+    document.getElementById("catecory_input_border").classList.remove("inputfield_required");
   }
 }
 
@@ -238,7 +238,7 @@ function returnAllData() {
   let title = document.getElementById("title").value;
   let description = document.getElementById("description").value;
   let date = document.getElementById("date").value;
-  let category = document.getElementById("catecory-input").value;
+  let category = document.getElementById("catecory_input").value;
   renderContactsToNewTask();
   let id = `task_${Date.now()}`;
   let status = "toDo";
@@ -315,15 +315,15 @@ async function postAllData(path = "", data) {
  * @returns {void}
  */
 function finishTaskNotification() {
-  let finishBox = document.getElementById("finish-box");
+  let finishBox = document.getElementById("finish_box");
   finishBox.style.animation = "none";
   finishBox.offsetHeight;
   finishBox.style.animation = "slideInFromRight 125ms forwards";
-  finishBox.classList.add("finish-container-activ");
+  finishBox.classList.add("finish_container_activ");
   setTimeout(() => {
     finishBox.style.animation = "slideOutToRight 125ms forwards";
     setTimeout(() => {
-      finishBox.classList.remove("finish-container-activ");
+      finishBox.classList.remove("finish_container_activ");
     }, 125);
   }, 1000);
 }
@@ -349,9 +349,9 @@ function clearAllTasks() {
  * set margin back with removing classlist.
  */
 function removeClassForRequiredMargin15px() {
-  document.getElementById("title-container").classList.remove("margin-15px");
-  document.getElementById("date-container").classList.remove("margin-15px");
-  document.getElementById("category-container").classList.remove("margin-15px");
+  document.getElementById("title_container").classList.remove("margin_15px");
+  document.getElementById("date_container").classList.remove("margin_15px");
+  document.getElementById("category_container").classList.remove("margin_15px");
 }
 
 /**
@@ -372,7 +372,7 @@ function clearValueOfInputFields() {
   document.getElementById("description").value = "";
   document.getElementById("assigned").value = "";
   document.getElementById("date").value = "";
-  document.getElementById("catecory-input").value = "";
+  document.getElementById("catecory_input").value = "";
   document.getElementById("subtask").value = "";
 }
 
@@ -381,11 +381,11 @@ function clearValueOfInputFields() {
  * @returns {void}
  */
 function borderFocus() {
-  let border = document.getElementById("subtusk-input-border");
-  border.classList.add("subtask-inputfield-focus");
+  let border = document.getElementById("subtusk_input_border");
+  border.classList.add("subtask_inputfield_focus");
   document.addEventListener("click", function outsideClick(event) {
     if (!border.contains(event.target)) {
-      border.classList.remove("subtask-inputfield-focus");
+      border.classList.remove("subtask_inputfield_focus");
       document.removeEventListener("click", outsideClick);
     }
   });

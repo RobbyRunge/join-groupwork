@@ -10,7 +10,7 @@ const subtaskInputField = document.querySelector("#subtask");
  */
 function writeSubtask() {
   let subtask = document.getElementById("subtask").value;
-  document.getElementById("subtusk-input-border").classList.add("subtask-inputfield-focus");
+  document.getElementById("subtusk_input_border").classList.add("subtask_inputfield_focus");
   if (subtask.length < 1) {
     setStandardButton();
   }
@@ -64,7 +64,7 @@ function setSubtask() {
  * Clears and rebuilds the task wrapper element with current data
  */
 function renderSubtasks() {
-  let tasks = document.querySelector("#tasks-wrapper");
+  let tasks = document.querySelector("#tasks_wrapper");
   tasks.innerHTML = "";
   for (const key in subtasksList) {
     if (Object.prototype.hasOwnProperty.call(subtasksList, key)) {
@@ -100,10 +100,10 @@ function deleteSubtask(x) {
  */
 function editSubtask(x) {
   currentcontainer = document.getElementById(x);
-  currentcontainer.classList.remove("subtask-list");
-  currentcontainer.classList.add("subtask-list-by-edit");
+  currentcontainer.classList.remove("subtask_list");
+  currentcontainer.classList.add("subtask_list_by_edit");
   document.getElementById(x).innerHTML = getEditSubtask(x);
-  currentsubtask = document.getElementById("current-subtask" + x);
+  currentsubtask = document.getElementById("current_subtask" + x);
   currentsubtask.value = subtasksList[x].task;
 }
 

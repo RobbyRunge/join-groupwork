@@ -37,7 +37,7 @@ function pushContacts(contacts) {
  * @returns {void}
  */
 function pushContactsToSelectField() {
-  let contactlist = document.getElementById("contact-list");
+  let contactlist = document.getElementById("contact_list");
   contactlist.innerHTML = "";
   for (let i = 0; i < arrayOfContacts.length; i++) {
     const currentContact = arrayOfContacts[i];
@@ -58,8 +58,8 @@ function pushContactsToSelectField() {
  * @returns {void}
  */
 function searchContacts() {
-  let search = document.getElementById("contact-input").value.toLowerCase();
-  let contactlist = document.getElementById("contact-list");
+  let search = document.getElementById("contact_input").value.toLowerCase();
+  let contactlist = document.getElementById("contact_list");
   contactlist.innerHTML = "";
   let current = arrayOfContacts.map((contact, index) => ({ ...contact, index })).filter((contact) => contact.name.toLowerCase().startsWith(search));
   for (let i = 0; i < current.length; i++) {
@@ -74,12 +74,12 @@ function searchContacts() {
  * @returns {void}
  */
 function openContactList() {
-  let contactList = document.getElementById("contact-list");
-  let inputBorder = document.getElementById("contact-input-border");
-  let inputField = document.getElementById("contact-input-field");
+  let contactList = document.getElementById("contact_list");
+  let inputBorder = document.getElementById("contact_input_border");
+  let inputField = document.getElementById("contact_input_field");
   if (contactList.classList.contains("visible")) return closeContactList();
   document.getElementById("assigned").classList.add("display_none");
-  inputBorder.classList.add("subtask-inputfield-focus");
+  inputBorder.classList.add("subtask_inputfield_focus");
   inputField.innerHTML = `<img class="icon-drop-down" src="../../assets/icons/addTask/arrow_drop_downaa.svg" alt="">`;
   contactList.classList.remove("display_none");
   if (contactFirstOpen) {
@@ -107,7 +107,7 @@ function showContactList(contactList) {
  * @returns {void}
  */
 function handleContactOutsideClick(event) {
-  let contactWrapper = document.getElementById("contact-wrapper");
+  let contactWrapper = document.getElementById("contact_wrapper");
   if (!contactWrapper.contains(event.target)) {
     closeContactList();
     document.removeEventListener("click", handleContactOutsideClick);
@@ -119,15 +119,15 @@ function handleContactOutsideClick(event) {
  * @returns {void}
  */
 function closeContactList() {
-  let contactList = document.getElementById("contact-list");
-  let inputBorder = document.getElementById("contact-input-border");
-  let inputField = document.getElementById("contact-input-field");
-  inputBorder.classList.remove("subtask-inputfield-focus");
+  let contactList = document.getElementById("contact_list");
+  let inputBorder = document.getElementById("contact_input_border");
+  let inputField = document.getElementById("contact_input_field");
+  inputBorder.classList.remove("subtask_inputfield_focus");
   inputField.innerHTML = `<img class="icon-drop-down" src="../../assets/icons/addTask/arrow_drop_downaa (1).svg" alt="">`;
   contactList.classList.remove("visible");
   setTimeout(() => {
     contactList.classList.add("display_none");
-    document.getElementById("contact-input").value = "";
+    document.getElementById("contact_input").value = "";
     document.getElementById("assigned").classList.remove("display_none");
   }, 125);
   document.removeEventListener("click", handleContactOutsideClick);
@@ -156,8 +156,8 @@ function addContact(x) {
 function setContact(x) {
   let addContact = document.getElementById("contact" + x);
   addContact.classList.remove("contactlist");
-  addContact.classList.add("contactlist-clicket");
-  let box = document.getElementById("contact-checkbox" + x);
+  addContact.classList.add("contactlist_clicket");
+  let box = document.getElementById("contact_checkbox" + x);
   box.innerHTML = `<img src="../../assets/icons/addTask/checkbox.svg" alt="">`;
   selectedContacts.push(x);
 }
@@ -185,8 +185,8 @@ function returnFirstLetter(name) {
 function removeContact(x) {
   let addContact = document.getElementById("contact" + x);
   addContact.classList.add("contactlist");
-  addContact.classList.remove("contactlist-clicket");
-  let box = document.getElementById("contact-checkbox" + x);
+  addContact.classList.remove("contactlist_clicket");
+  let box = document.getElementById("contact_checkbox" + x);
   box.innerHTML = `<img src="../../assets/icons/addTask/box.svg" alt="">`;
   const index = selectedContacts.indexOf(x);
   selectedContacts.splice(index, 1);
@@ -201,6 +201,6 @@ function renderSelectetContacts() {
   wrapper.innerHTML = "";
   for (let i = 0; i < selectedContacts.length; i++) {
     const index = selectedContacts[i];
-    wrapper.innerHTML += `<div class="contact-img-cyrcle" style="background-color: ${arrayOfContacts[index].color}">${returnFirstLetter(arrayOfContacts[index].name)}</div>`;
+    wrapper.innerHTML += `<div class="contact_img_cyrcle" style="background-color: ${arrayOfContacts[index].color}">${returnFirstLetter(arrayOfContacts[index].name)}</div>`;
   }
 }

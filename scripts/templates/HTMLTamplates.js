@@ -132,9 +132,9 @@ function HTMLTamplateForTheEditFunk() {
             </div>
           <h3>Subtasks</h3>
           <div class="subtask_input">
-            <input id="editSubtask" class="subtask-inputfield-text" oninput="writeEditSubtask()" type="text" placeholder="Add new subtask">
-            <div id="subtaskbuttons" class="subtask-button-container">
-              <button onclick="focusOnInputField(event)" class="subtask-inputfield-button">
+            <input id="editSubtask" class="subtask_inputfield_text" oninput="writeEditSubtask()" type="text" placeholder="Add new subtask">
+            <div id="subtaskbuttons" class="subtask_button_container">
+              <button onclick="focusOnInputField(event)" class="subtask_inputfield_button">
                 <img id="plusBtn" src="../../assets/icons/addTask/subtasks_icons.svg" alt="">
               </button>
             </div>
@@ -171,18 +171,18 @@ function HTMLTamplateForDropdownProfilesSectionAddTask(key, color, initials, nam
 
 function setStandardButtonInOpenCard() {
   document.getElementById("subtaskbuttons").innerHTML = `
-    <button class="subtask-inputfield-button">
+    <button class="subtask_inputfield_button">
         <img src="../../assets/icons/addTask/subtasks_icons.svg" alt="">
     </button>`;
 }
 
 function setdubbleButtonInOpenCard() {
   document.getElementById("subtaskbuttons").innerHTML = `
-    <button class="subtask-inputfield-button">
+    <button class="subtask_inputfield_button">
         <img onclick="clearEditSubtask(event)" src="../../assets/icons/addTask/cross.svg" alt="">
     </button>
-    <div class="pixelbar-mini"></div>
-    <button class="subtask-inputfield-button">    
+    <div class="pixelbar_mini"></div>
+    <button class="subtask_inputfield_button">    
         <img id="confirmBtn" onclick="addNewSubtask(event)" src="../../assets/icons/addTask/done.svg" alt="">
     </button>
 `;
@@ -220,17 +220,17 @@ function HTMLTamplateForAddTaskInBorad() {
       <button onclick="hideOverlay()"><img src="../../assets/icons/board/close.svg" alt="close"></button>
     </div>
     <div class="all_content">
-      <div class="no_space_between input-container">
-        <div class="inputfield-title-container">
-            <span class="display-flex"><p class="display-flex tasktitles">Title</p><p class="color-red tasktitles">*</p></span>
+      <div class="no_space_between input_container">
+        <div class="inputfield_title_container">
+            <span class="display_flex"><p class="display_flex tasktitles">Title</p><p class="color_red tasktitles">*</p></span>
             <input class="inputfield" maxlength="60" id="title" placeholder="Enter a title" type="text" >
             <span id="titleRequired" class="required hide_element">This field is requierd</span>
         </div>
-        <div class="inputfield-title-container">
+        <div class="inputfield_title_container">
             <p class="tasktitles">Description</p>
             <textarea class="textareafield" id="description" placeholder="Enter a Description" name="Description"></textarea>
         </div>
-        <div class="inputfield-title-container">
+        <div class="inputfield_title_container">
             <p class="tasktitles">Assigned to</p>
             <div class="dropdown_menu">
               <div class="dropdown_button add_task_section " onclick="openMenuSectionAddTask(), displayDropDownMenuSectionAddTask()">Select contacts to assign
@@ -239,25 +239,25 @@ function HTMLTamplateForAddTaskInBorad() {
             </div>  
             <div class="chosen_contacts"></div>
         </div>
-        <div class="assigned-contact-wrapper" id="assigned"></div>
+        <div class="assigned_contact_wrapper" id="assigned"></div>
       </div>
       <div class="pixelbar"></div>
-      <div class="input-container">
-        <div class="inputfield-title-container">
-            <span class="display-flex"><p class="tasktitles">Due date</p><p class="color-red tasktitles">*</p></span>
+      <div class="input_container">
+        <div class="inputfield_title_container">
+            <span class="display_flex"><p class="tasktitles">Due date</p><p class="color_red tasktitles">*</p></span>
             <input class="inputfield" id="dateBoard" type="date" required>
             <span id="dateRequired" class="required hide_element">This field is requierd</span>
         </div>
-        <div class="inputfield-title-container">
+        <div class="inputfield_title_container">
             <p class="tasktitles">Prio</p>
-            <div class="button-container button-container-section-board">
+            <div class="button_container button_container_section_board">
                 <button onclick="buttonUrgent(event)" id="urgent" class="prioBtn transition">Urgent <div id="iconurgent" class="prio_icon"><img src="../../assets/icons/addTask/icon_urgent.svg" alt=""></div></button>
                 <button onclick="buttonMedium(event)" id="medium" class="prioBtn transition">Medium<div id="iconmedium" class="prio_icon"><img src="../../assets/icons/addTask/icon_medium.svg" alt=""></div></button>
                 <button onclick="buttonLow(event)" id="low" class="prioBtn">Low<div id="iconlow" class="prio_icon transition"><img src="../../assets/icons/addTask/icon_low.svg" alt=""></div></button>
             </div>
         </div>
-        <div class="inputfield-title-container">
-          <span class="display-flex"><p class="tasktitles">Category</p><p class="color-red tasktitles">*</p></span>
+        <div class="inputfield_title_container">
+          <span class="display_flex"><p class="tasktitles">Category</p><p class="color_red tasktitles">*</p></span>
             <select onclick="mimicPlaceHolder()" class="inputfield" id="category" placeholder="Select task category" required>
                 <option value="placeholder">Select task category</option>
                 <option value="Technical Task">Technical Task</option>
@@ -265,12 +265,12 @@ function HTMLTamplateForAddTaskInBorad() {
             </select>
             <span id="categoryRequired" class="required hide_element">This field is requierd</span>
         </div>
-        <div class="inputfield-title-container">
+        <div class="inputfield_title_container">
           <p class="tasktitles">Subtasks</p>
-          <div class="subtask-inputfield">
-            <input id="subtask" class="subtask-inputfield-text" type="text" onclick="focusTheField()">
-            <div id="subtaskbuttons" class="subtask-button-container">
-              <button class="subtask-inputfield-button" onclick="focusTheField()">
+          <div class="subtask_inputfield">
+            <input id="subtask" class="subtask_inputfield_text" type="text" onclick="focusTheField()">
+            <div id="subtaskbuttons" class="subtask_button_container">
+              <button class="subtask_inputfield_button" onclick="focusTheField()">
                 <img id="plusIcon" src="../../assets/icons/addTask/subtasks_icons.svg" alt="">
               </button>
                 <div class="inputFiledSubtask hide_element">
@@ -286,7 +286,7 @@ function HTMLTamplateForAddTaskInBorad() {
                 </div>  
             </div>
           </div>
-          <div id="tasks-wrapper" class="subtask_wrapper_board">
+          <div id="tasks_wrapper" class="subtask_wrapper_board">
           </div>
         </div>
       </div>
