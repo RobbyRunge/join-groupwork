@@ -167,7 +167,7 @@ function closeOverlayEditContact() {
       clearErrorMessages();
       setTimeout(() => {
         openContactInfoAfterEdit(lastEditedContactId);
-      }, 1000);
+      }, 800);
     },
     { once: true }
   );
@@ -280,8 +280,8 @@ function ifContactElementContainsContactActive(overlay, contactElement) {
 function elseContactElementContainsContactActive(overlay, contactElement, contact) {
   contactElement.classList.add("contact_active");
   contactElement.classList.remove("hover_contact_list");
-  overlay.innerHTML = getTemplateOfContactInfo(contact);
   if (overlay.classList.contains("d_none")) {
+    overlay.innerHTML = getTemplateOfContactInfo(contact);
     overlay.classList.remove("d_none");
     overlay.style.animation = "slideInFromRight 125ms forwards";
   } else {
@@ -303,9 +303,13 @@ function elseOverlayContactInfosGoOut(overlay, contact) {
     () => {
       overlay.classList.add("d_none");
       overlay.style.animation = "";
-      overlay.innerHTML = getTemplateOfContactInfo(contact);
-      overlay.classList.remove("d_none");
-      overlay.style.animation = "slideInFromRight 125ms forwards";
+      setTimeout(() => {
+        overlay.innerHTML = getTemplateOfContactInfo(contact);
+        setTimeout(() => {
+          overlay.classList.remove("d_none");
+          overlay.style.animation = "slideInFromRight 125ms forwards";
+        }, 50);
+      }, 50);
     },
     { once: true }
   );

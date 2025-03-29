@@ -113,7 +113,7 @@ function findUserByEmail(users, email) {
 function authenticateUser(userKey) {
   localStorage.setItem("userId", userKey);
   localStorage.removeItem("isGuest");
-  window.location.href = "../../../modul-10.1-join/pages/summary/summary.html";
+  window.location.href = "../../pages/summary/summary.html";
 }
 
 /**
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (guestLogButton) {
     guestLogButton.onclick = function () {
       localStorage.setItem("userId", "guest");
-      window.location.href = "../../../modul-10.1-join/pages/summary/summary.html";
+      window.location.href = "../../pages/summary/summary.html";
     };
   }
 });

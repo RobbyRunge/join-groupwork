@@ -68,6 +68,12 @@ async function tryHandlingFromAddContact(uniqueKey, { name, email, phone, color 
   closeOverlayAddContact();
   deleteInputs();
   setTimeoutSuccessfullyOverlayAddContact();
+  setTimeout(() => {
+    const newContactIndex = arrayOfContacts.findIndex(contact => contact.id === uniqueKey);
+    if (newContactIndex !== -1) {
+      toggleOverlayContactInfos(newContactIndex);
+    }
+  }, 950);
   return contactData;
 }
 
