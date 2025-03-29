@@ -1,6 +1,6 @@
 .category {
-  width: 7rem;
-  height: 1.6rem;
+  width: 112px;
+  height: 26px;
   border: 1px transparent;
   border-radius: 7px;
   background-color: rgb(0, 56, 255);
@@ -12,11 +12,11 @@
 }
 
 .category_user_story {
-  width: 6rem;
+  width: 96px;
 }
 
 .category_technical_task {
-  width: 9rem;
+  width: 144px;
   background-color: rgb(31, 215, 193);
 }
 
@@ -109,8 +109,8 @@
   border: 2px solid;
   border-color: white;
   border-radius: 50%;
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 35px;
+  width: 35px;
   text-align: center;
 }
 
@@ -222,8 +222,8 @@
   }
 
   .circle {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 24px;
+    height: 24px;
     font-size: 12px;
   }
 
@@ -247,8 +247,8 @@
 
 @media only screen and (min-width: 800px) {
   .circle {
-    width: 1.9rem;
-    height: 1.9rem;
+    width: 30px;
+    height: 30px;
     font-size: 16px;
   }
 

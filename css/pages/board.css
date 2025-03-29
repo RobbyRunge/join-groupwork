@@ -34,7 +34,7 @@ h5 {
 
 .search_bar {
   display: flex;
-  gap: 4rem;
+  gap: 64px;
 }
 
 #searchbar {
@@ -103,7 +103,7 @@ h5 {
 .board_column {
   display: flex;
   align-items: center;
-  width: 21.7rem;
+  width: 347.2px;
   white-space: nowrap;
 }
 
@@ -170,7 +170,7 @@ h5 {
   border: 1px, transparent;
   box-shadow: 1px 1px 6px #838282;
   border-radius: 18px;
-  height: 15rem;
+  height: 240px;
   width: 300px;
   padding: 18px;
   margin-bottom: 10px;
@@ -193,7 +193,7 @@ h5 {
   color: rgb(168, 168, 168);
   box-shadow: 0 3px 3px 0 rgba(104, 104, 104, 0.048);
   border-radius: 12px;
-  height: 4rem;
+  height: 64px;
   width: 95%;
   display: flex;
   align-items: center;
@@ -262,7 +262,7 @@ h5 {
 
 .highlight_box {
   width: 332px;
-  height: 15rem;
+  height: 240px;
   background-color: #e0e0e0;
   border: 2px dashed #a0a0a0;
   margin: 5px 0 5px 0;
@@ -328,7 +328,7 @@ input[type="search"]::-webkit-search-results-decoration {
   }
 
   .board_column {
-    width: 17.7rem;
+    width: 283.2px;
   }
 
   .card {
@@ -545,7 +545,7 @@ input[type="search"]::-webkit-search-results-decoration {
     scrollbar-width: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    gap: 0.9rem;
+    gap: 14.4px;
     padding-right: 10px;
   }
 

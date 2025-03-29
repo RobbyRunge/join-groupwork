@@ -172,7 +172,7 @@ select {
 
 .buttons {
   display: flex;
-  height: 1.4rem;
+  height: 22px;
 }
 
 #editInputField {
