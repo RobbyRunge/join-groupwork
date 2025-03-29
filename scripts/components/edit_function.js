@@ -178,11 +178,11 @@ function markAssignedContacts(allContacts, assignedContacts) {
     const contact = contactElement.getAttributeNode("id_value").value;
     if (Object.keys(assignedContacts).includes(contact)) {
       contactElement.classList.add("selected_contact");
-      contactElement.lastElementChild.lastElementChild.src = "./assets/icons/checkbox/check_white.svg";
+      contactElement.lastElementChild.lastElementChild.src = "../../assets/icons/checkbox/check_white.svg";
       contactElement.addEventListener("click", (event) => {
         retractContactFromCard(event);
         contactElement.classList.remove("selected_contact");
-        contactElement.lastElementChild.lastElementChild.src = "./assets/icons/checkbox/openCardRectangle.svg";
+        contactElement.lastElementChild.lastElementChild.src = "../../assets/icons/checkbox/openCardRectangle.svg";
       });
     }
   });
@@ -213,7 +213,7 @@ async function handleNewContactAssignment(contact) {
   addDataToFireBase(`${taskPath}/${idOfcurrentElement}/assigned`, newContact);
   let clickedElement = document.querySelector(`[id_value="${contact}"]`);
   clickedElement.classList.add("selected_contact");
-  clickedElement.lastElementChild.lastElementChild.src = "./assets/icons/checkbox/check_white.svg";
+  clickedElement.lastElementChild.lastElementChild.src = "../../assets/icons/checkbox/check_white.svg";
   document.querySelector(".assigned_to").innerHTML += `<div class="circle circle_profile_names spacing" style="background-color: ${newContact[contact].color}">${initials(newContact[contact].name)}</div>`;
   addDataToFireBase(`${taskPath}/${idOfcurrentElement}/assigned`, newContact);
 }
