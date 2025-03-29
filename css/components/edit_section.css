@@ -1,4 +1,5 @@
 .scrollbar {
+  height: calc(100vh - 310px);
   overflow-y: auto;
 }
 
@@ -214,6 +215,10 @@ select {
 }
 
 @media only screen and (max-width: 1200px) {
+  .scrollbar {
+    height: calc(100vh - 260px);
+  }
+
   .prio_button {
     width: 80px;
     height: 35px;
@@ -264,7 +269,11 @@ select {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (max-width: 800px) {
+  .scrollbar {
+    height: calc(100vh - 400px) ;
+  }
+
   .prio_button {
     width: 120px;
     height: 50px;
