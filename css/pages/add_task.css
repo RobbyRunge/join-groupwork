@@ -180,6 +180,7 @@ p {
   max-height: 280px;
   opacity: 1;
   transform: scaleY(1);
+  overflow: auto;
 }
 
 .assigned_contact_wrapper {
@@ -814,6 +815,10 @@ input[type="date"]:valid {
     width: 440px;
   }
 
+  .catecory_wrapper.visible {
+    width: 440px;
+  }
+
   ul {
     max-width: 360px !important;
   }
@@ -956,6 +961,10 @@ input[type="date"]:valid {
     max-width: 300px !important;
   }
 
+  .catecory_wrapper.visible {
+    width: 300px;
+  }
+
   li {
     max-width: 160px;
   }
@@ -1036,6 +1045,18 @@ input[type="date"]:valid {
   .title {
     margin-top: 10px;
   }
+  
+  #catecory_list,
+  .catecory_wrapper {
+    width: calc(100vw - 48px) !important;
+  }
+
+  .catecory_wrapper,
+  .contact_wrapper {
+    width: 100% !important;
+    font-size: 16px;
+  }
+
 
   .inputfield,
   .inputfield_title_container,
@@ -1073,15 +1094,6 @@ input[type="date"]:valid {
     width: calc(100vw - 48px) !important;
   }
 
-  .catecory_wrapper,
-  .contact_wrapper {
-    width: 100% !important;
-    font-size: 16px;
-  }
-
-  .contactlist {
-    font-size: 16px;
-  }
 
   [type="date"]::-webkit-calendar-picker-indicator {
     background: #fff url(../../assets/icons/addTask/typeDate.svg) 20% 50% no-repeat;

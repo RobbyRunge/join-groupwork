@@ -1,5 +1,5 @@
 .submenu_position {
-  position: absolute;
+  position: fixed;
   top: 106px;
   right: 24px;
   height: 158px;
