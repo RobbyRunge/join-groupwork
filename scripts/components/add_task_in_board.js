@@ -99,12 +99,12 @@ function chooseContact(event) {
   if (isAlreadySelected) {
     selectedContactIds.splice(index, 1);
     profile.classList.remove("selected_contact");
-    checkbox.src = "./assets/icons/checkbox/openCardRectangle.svg";
+    checkbox.src = "../../assets/icons/checkbox/openCardRectangle.svg";
     unselect(contactID);
   } else {
     selectedContactIds.push(contactID);
     profile.classList.add("selected_contact");
-    checkbox.src = "./assets/icons/checkbox/check_white.svg";
+    checkbox.src = "../../assets/icons/checkbox/check_white.svg";
     displayChossenContact(contactID);
   }
 }

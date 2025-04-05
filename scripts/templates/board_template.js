@@ -268,7 +268,7 @@ function HTMLTamplateForAddTaskInBorad() {
         <div class="inputfield_title_container">
           <p class="tasktitles">Subtasks</p>
           <div class="subtask_inputfield">
-            <input id="subtask" class="subtask_inputfield_text" type="text" onclick="focusTheField()">
+            <input id="subtask" class="subtask_inputfield_text" type="text" onclick="focusTheField()" placeholder="Add new subtask">
             <div id="subtaskbuttons" class="subtask_button_container">
               <button class="subtask_inputfield_button" onclick="focusTheField()">
                 <img id="plusIcon" src="../../assets/icons/addTask/subtasks_icons.svg" alt="">

@@ -83,8 +83,9 @@ textarea {
 select {
   width: 100%;
   height: 35px;
-  border: solid 1px rgba(209, 209, 209, 1);
+  /* border: solid 1px rgba(209, 209, 209, 1); */
   border-radius: 10px;
+  box-shadow: none;
 }
 
 .assigned_to {
