@@ -96,10 +96,6 @@
   cursor: pointer;
 }
 
-.hide_element {
-  display: none;
-}
-
 .subtask_paragraf {
   margin-left: 30px;
 }
@@ -218,14 +214,25 @@
   width: 440px;
 }
 
-.required {
-  color: rgb(255, 129, 144);
-  font-size: 12px;
+.hide_element {
+  display: none;
 }
 
 .required_color {
   border: solid 1px rgb(255, 129, 144);
 }
+
+.required {
+  position: absolute;
+  color: rgb(255, 129, 144);
+  font-size: 12px;
+  top: 480px;
+}
+
+.required_title,
+.required_date {
+  top: 230px;
+};
 
 .task_added {
   position: absolute;

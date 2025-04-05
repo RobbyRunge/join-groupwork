@@ -224,7 +224,7 @@ function HTMLTamplateForAddTaskInBorad() {
         <div class="inputfield_title_container">
             <span class="display_flex"><p class="display_flex tasktitles">Title</p><p class="color_red tasktitles">*</p></span>
             <input class="inputfield" maxlength="60" id="title" placeholder="Enter a title" type="text" >
-            <span id="titleRequired" class="required hide_element">This field is requierd</span>
+            <span id="titleRequired" class="required required_title hide_element">This field is requierd</span>
         </div>
         <div class="inputfield_title_container">
             <p class="tasktitles">Description</p>
@@ -246,7 +246,7 @@ function HTMLTamplateForAddTaskInBorad() {
         <div class="inputfield_title_container">
             <span class="display_flex"><p class="tasktitles">Due date</p><p class="color_red tasktitles">*</p></span>
             <input class="inputfield" id="dateBoard" type="date" required>
-            <span id="dateRequired" class="required hide_element">This field is requierd</span>
+            <span id="dateRequired" class="required required_date hide_element">This field is requierd</span>
         </div>
         <div class="inputfield_title_container">
             <p class="tasktitles">Prio</p>
@@ -263,7 +263,7 @@ function HTMLTamplateForAddTaskInBorad() {
                 <option value="Technical Task">Technical Task</option>
                 <option value="User Story">User Story</option>
             </select>
-            <span id="categoryRequired" class="required hide_element">This field is requierd</span>
+            <span id="categoryRequired" class="required required_category hide_element">This field is requierd</span>
         </div>
         <div class="inputfield_title_container">
           <p class="tasktitles">Subtasks</p>
