@@ -41,7 +41,7 @@ h3 {
 }
 
 .dimensions {
-  width: 100%;
+  width: 100% !important;
   height: 35px;
 }
 
