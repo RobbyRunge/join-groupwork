@@ -97,6 +97,7 @@ h5 {
 .profile_names span {
   margin-left: 10px;
 }
+
 .open_card_subtasks {
   display: flex;
   flex-direction: column;
@@ -257,7 +258,7 @@ input[type="checkbox"]:checked {
 @media only screen and (max-width: 1200px) {
   .open_card_title {
     display: flex;
-    font-size: 41px;
+    font-size: 31px;
     margin-bottom: 20px;
     width: 257px;
   }

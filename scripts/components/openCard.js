@@ -243,13 +243,3 @@ function hideTaskDeleteMsg() {
     }, 125);
   }, 900);
 }
-
-/**
- * Resizes the card title if it is too long.
- */
-function resizeTitleIfTooLong() {
-  const cardTitle = document.querySelector(".open_card_title");
-  if (cardTitle.innerHTML.length > 35) {
-    cardTitle.style.fontSize = "3rem";
-  }
-}
