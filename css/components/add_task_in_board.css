@@ -265,6 +265,49 @@
   background: #fff url(../../assets/icons/addTask/typeDate.svg) 97% 50% no-repeat;
 }
 
+.section_name {
+  width: 100%;
+}
+
+.contentSectionAddTask {
+  height: auto;
+  width: 440px;
+  gap: 0px !important;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: all 225ms ease-in-out;
+  transform-origin: top;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.9);
+  scrollbar-width: 24px;
+  scrollbar-color: rgba(168, 168, 168, 1) transparent;
+}
+
+.contentSectionAddTask.hidden {
+  margin-left: 74px;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.9);
+  pointer-events: none;
+}
+
+.contentSectionAddTask.visible {
+  background-color: rgb(246, 247, 248) !important;
+  margin-left: 74px;
+  max-height: 220px;
+  opacity: 1;
+  transform: scaleY(1);
+  overflow-y: auto;
+}
+
+.display_none {
+  display: none !important;
+}
+
 @media only screen and (max-width: 1600px) {
   .title_and_closeBtn {
     padding: 0 38px 38px 38px;

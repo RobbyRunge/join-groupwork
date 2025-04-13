@@ -6,7 +6,8 @@ let contactList = [],
   subtaskObject = {},
   statusOfRequired = false,
   taskStatus = "toDo",
-  selectedContactIds = [];
+  selectedContactIds = [],
+  contactFirstOpen = true; // Add this variable
 
 /**
  * Displays the task overlay with an animation.
@@ -50,14 +51,20 @@ function renderAddTaskMenu() {
   }
   buttonMedium(event);
   disablePastDates("dateBoard");
+  contactFirstOpen = true;
+  displayDropDownMenuSectionAddTask();
 }
 
 /**
  * Fetches contacts and displays them in the dropdown menu.
  */
 async function displayDropDownMenuSectionAddTask() {
-  document.querySelector(".contentSectionAddTask").innerHTML = "";
   let contactsData = await fetchTasks("contacts");
+  const dropdown = document.querySelector(".contentSectionAddTask");
+  dropdown.innerHTML = "";
+  dropdown.classList.add("display_none");
+  dropdown.classList.add("hidden");
+  dropdown.classList.remove("visible");
   for (const key in contactsData) {
     if (Object.prototype.hasOwnProperty.call(contactsData, key)) {
       renderContactItem(key, contactsData[key]);
@@ -129,6 +136,63 @@ async function displayChossenContact(id) {
 function unselect(id) {
   let refElement = document.querySelector(`[profile_id=${id}]`);
   refElement.remove();
+}
+
+/**
+ * Toggles the contact dropdown visibility with animation.
+ */
+function toggleContactDropdown() {
+  let contactList = document.querySelector(".contentSectionAddTask");
+  let arrowIcon = document.querySelector(".toggleContactsIcon");
+  if (contactList.classList.contains("visible")) {
+    return closeContactDropdown();
+  }
+  document.querySelector(".chosen_contacts").classList.add("display_none");
+  arrowIcon.src = "../../assets/icons/board/arrow_drop_down_up.svg";
+  contactList.classList.remove("display_none");
+  if (contactFirstOpen) {
+    void contactList.offsetWidth; // Force reflow
+    contactFirstOpen = false;
+  }
+  showContactDropdown(contactList);
+}
+
+/**
+ * Shows the contact dropdown with animation.
+ * @param {HTMLElement} contactList - The contact list dropdown element.
+ */
+function showContactDropdown(contactList) {
+  setTimeout(() => {
+    contactList.classList.add("visible");
+    contactList.classList.remove("hidden");
+    document.addEventListener("click", handleContactOutsideClick);
+  }, 10);
+}
+
+/**
+ * Closes the contact dropdown with animation.
+ */
+function closeContactDropdown() {
+  let contactList = document.querySelector(".contentSectionAddTask");
+  let arrowIcon = document.querySelector(".toggleContactsIcon");
+  contactList.classList.remove("visible");
+  contactList.classList.add("hidden");
+  arrowIcon.src = "../../assets/icons/board/arrow_drop_down.svg";
+  setTimeout(() => {
+    contactList.classList.add("display_none");
+    document.querySelector(".chosen_contacts").classList.remove("display_none");
+  }, 225); 
+  document.removeEventListener("click", handleContactOutsideClick);
+}
+
+/**
+ * Handles clicks outside the contact dropdown to close it.
+ */
+function handleContactOutsideClick(event) {
+  let contactWrapper = document.querySelector(".section_name");
+  if (!contactWrapper.contains(event.target)) {
+    closeContactDropdown();
+  }
 }
 
 /**

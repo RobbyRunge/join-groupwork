@@ -542,6 +542,7 @@ ul {
   opacity: 0;
   transform: scaleY(0.9);
 }
+
 .catecory_wrapper.hidden {
   max-height: 0;
   opacity: 0;

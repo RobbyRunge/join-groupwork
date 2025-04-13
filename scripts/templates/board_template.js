@@ -232,12 +232,16 @@ function HTMLTamplateForAddTaskInBorad() {
         </div>
         <div class="inputfield_title_container">
             <p class="tasktitles">Assigned to</p>
-            <div class="dropdown_menu">
-              <div class="dropdown_button add_task_section " onclick="openMenuSectionAddTask(), displayDropDownMenuSectionAddTask()">Select contacts to assign
-              <img id="arrow" src="../../assets/icons/board/arrow_drop_down.svg" alt="arrow" /></div>
-              <div class="contentSectionAddTask"></div>
-            </div>  
-            <div class="chosen_contacts"></div>
+            <div class="section_name">
+                <div onclick="toggleContactDropdown()" class="dropdown_button add_task_section">
+                    Select contacts to assign
+                    <img class="toggleContactsIcon" src="../../assets/icons/board/arrow_drop_down.svg" alt="arrow" />
+                </div>
+                <div class="contentSectionAddTask display_none hidden">
+                    <!-- Contact items will be rendered here -->
+                </div>
+                <div class="chosen_contacts"></div>
+            </div>
         </div>
         <div class="assigned_contact_wrapper" id="assigned"></div>
       </div>
