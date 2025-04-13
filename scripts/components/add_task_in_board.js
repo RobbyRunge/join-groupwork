@@ -7,7 +7,8 @@ let contactList = [],
   statusOfRequired = false,
   taskStatus = "toDo",
   selectedContactIds = [],
-  contactFirstOpen = true; // Add this variable
+  contactFirstOpen = true,
+  categoryFirstOpen = true;
 
 /**
  * Displays the task overlay with an animation.
@@ -52,7 +53,9 @@ function renderAddTaskMenu() {
   buttonMedium(event);
   disablePastDates("dateBoard");
   contactFirstOpen = true;
+  categoryFirstOpen = true;
   displayDropDownMenuSectionAddTask();
+  displayCategoryDropdownMenu();
 }
 
 /**
@@ -193,6 +196,86 @@ function handleContactOutsideClick(event) {
   if (!contactWrapper.contains(event.target)) {
     closeContactDropdown();
   }
+}
+
+/**
+ * Toggles the category dropdown visibility with animation.
+ */
+function toggleCategoryDropdown() {
+  let categoryList = document.querySelector(".categorySectionAddTask");
+  let arrowIcon = document.querySelector(".toggleCategoryIcon");
+  if (categoryList.classList.contains("visible")) {
+    return closeCategoryDropdown();
+  }
+  arrowIcon.src = "../../assets/icons/board/arrow_drop_down_up.svg";
+  categoryList.classList.remove("display_none");
+  if (categoryFirstOpen) {
+    void categoryList.offsetWidth;
+    categoryFirstOpen = false;
+  }
+  showCategoryDropdown(categoryList);
+}
+
+/**
+ * Shows the category dropdown with animation.
+ * @param {HTMLElement} categoryList - The category list dropdown element.
+ */
+function showCategoryDropdown(categoryList) {
+  setTimeout(() => {
+    categoryList.classList.add("visible");
+    categoryList.classList.remove("hidden");
+    document.addEventListener("click", handleCategoryOutsideClick);
+  }, 10);
+}
+
+/**
+ * Closes the category dropdown with animation.
+ */
+function closeCategoryDropdown() {
+  let categoryList = document.querySelector(".categorySectionAddTask");
+  let arrowIcon = document.querySelector(".toggleCategoryIcon");
+  categoryList.classList.remove("visible");
+  categoryList.classList.add("hidden");
+  arrowIcon.src = "../../assets/icons/board/arrow_drop_down.svg";
+  setTimeout(() => {
+    categoryList.classList.add("display_none");
+  }, 225);
+  document.removeEventListener("click", handleCategoryOutsideClick);
+}
+
+/**
+ * Handles clicks outside the category dropdown to close it.
+ */
+function handleCategoryOutsideClick(event) {
+  let categoryWrapper = document.querySelector(".category_section_name");
+  if (!categoryWrapper.contains(event.target)) {
+    closeCategoryDropdown();
+  }
+}
+
+/**
+ * Displays categories in the dropdown menu.
+ */
+function displayCategoryDropdownMenu() {
+  const dropdown = document.querySelector(".categorySectionAddTask");
+  dropdown.innerHTML = "";
+  dropdown.innerHTML += getTemplateOfRenderCategory();
+}
+
+/**
+ * Selects a category from the dropdown.
+ * @param {string} category - The selected category.
+ */
+function selectCategory(category) {
+  document.getElementById("category").value = category;
+  const dropdownButton = document.querySelector(".category_section_name .dropdown_button");
+  dropdownButton.innerHTML = `
+    ${category}
+    <img class="toggleCategoryIcon" src="../../assets/icons/board/arrow_drop_down.svg" alt="arrow" />
+  `;
+  dropdownButton.classList.add("category-selected");
+  
+  closeCategoryDropdown();
 }
 
 /**
@@ -386,13 +469,16 @@ function requiredFieldDate() {
  */
 function requiredFieldCategory() {
   const inputFiledCategory = document.querySelector("#category");
+  const dropdownButton = document.querySelector(".category_section_name .dropdown_button");
   if (inputFiledCategory.value === "placeholder") {
-    inputFiledCategory.classList.add("required_color");
+    dropdownButton.classList.add("required_color");
     document.querySelector("#categoryRequired").classList.remove("hide_element");
   }
-  inputFiledCategory.addEventListener("input", function () {
-    this.classList.remove("required_color");
-    document.querySelector("#categoryRequired").classList.add("hide_element");
+  document.querySelectorAll(".categorySectionAddTask .align_items").forEach(item => {
+    item.addEventListener("click", function() {
+      dropdownButton.classList.remove("required_color");
+      document.querySelector("#categoryRequired").classList.add("hide_element");
+    });
   });
 }
 

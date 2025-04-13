@@ -262,12 +262,19 @@ function HTMLTamplateForAddTaskInBorad() {
         </div>
         <div class="inputfield_title_container">
           <span class="display_flex"><p class="tasktitles">Category</p><p class="color_red tasktitles">*</p></span>
-            <select onclick="mimicPlaceHolder()" class="inputfield" id="category" placeholder="Select task category" required>
-                <option value="placeholder">Select task category</option>
-                <option value="Technical Task">Technical Task</option>
-                <option value="User Story">User Story</option>
-            </select>
-            <span id="categoryRequired" class="required required_category hide_element">This field is requierd</span>
+          <div class="category_section_name">
+            <div onclick="toggleCategoryDropdown()" class="dropdown_button add_task_section">
+              Select task category
+              <img class="toggleCategoryIcon" src="../../assets/icons/board/arrow_drop_down.svg" alt="arrow" />
+            </div>
+            <div class="categorySectionAddTask display_none hidden"></div>
+          </div>
+          <select id="category" class="display_none" required>
+            <option value="placeholder">Select task category</option>
+            <option value="Technical Task">Technical Task</option>
+            <option value="User Story">User Story</option>
+          </select>
+          <span id="categoryRequired" class="required required_category hide_element">This field is requierd</span>
         </div>
         <div class="inputfield_title_container">
           <p class="tasktitles">Subtasks</p>
@@ -302,6 +309,16 @@ function HTMLTamplateForAddTaskInBorad() {
           <button onclick="createTask()" class="createBtn transition">Create Task <img src="../../assets/icons/addTask/check.svg"</button>
         </div>
     </div> `;
+}
+
+function getTemplateOfRenderCategory() {
+  return `
+    <div onclick="selectCategory('Technical Task')" class="align_items" data-category="Technical Task">
+      <div class="icon_name_container">Technical Task</div>
+    </div>
+    <div onclick="selectCategory('User Story')" class="align_items" data-category="User Story">
+      <div class="icon_name_container">User Story</div>
+    </div>`;
 }
 
 function HTMLTamplateForSubtasksInAddTaskBoard(task) {

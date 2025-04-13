@@ -226,7 +226,7 @@
   position: absolute;
   color: rgb(255, 129, 144);
   font-size: 12px;
-  top: 480px;
+  top: 468px;
 }
 
 .required_title,
@@ -298,7 +298,7 @@
 .contentSectionAddTask.visible {
   background-color: rgb(246, 247, 248) !important;
   margin-left: 74px;
-  max-height: 220px;
+  max-height: 200px;
   opacity: 1;
   transform: scaleY(1);
   overflow-y: auto;
@@ -306,6 +306,56 @@
 
 .display_none {
   display: none !important;
+}
+
+.categorySectionAddTask {
+  height: auto;
+  width: 440px;
+  gap: 0px !important;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  transition: all 225ms ease-in-out;
+  transform-origin: top;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.9);
+  scrollbar-width: 24px;
+  scrollbar-color: rgba(168, 168, 168, 1) transparent;
+}
+
+.categorySectionAddTask.hidden {
+  max-height: 0;
+  opacity: 0;
+  transform: scaleY(0.9);
+  pointer-events: none;
+}
+
+.categorySectionAddTask.visible {
+  background-color: rgb(246, 247, 248) !important;
+  max-height: 220px;
+  opacity: 1;
+  transform: scaleY(1);
+  overflow-y: auto;
+}
+
+.category_section_name {
+  width: 100%;
+  z-index: 1;
+}
+
+.selected_category {
+  display: flex;
+}
+
+.category_section_name .dropdown_button {
+  color: rgb(209, 209, 209);
+}
+
+.category_section_name .dropdown_button.category-selected {
+  color: black;
 }
 
 @media only screen and (max-width: 1600px) {
