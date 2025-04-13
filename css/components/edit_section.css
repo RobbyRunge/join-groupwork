@@ -91,7 +91,6 @@ select {
 .assigned_to {
   display: flex;
   align-items: center;
-  margin: 0 0 20px 10px;
 }
 
 .spacing {
@@ -272,7 +271,7 @@ select {
 
 @media only screen and (max-width: 800px) {
   .scrollbar {
-    height: calc(100vh - 400px) ;
+    height: calc(100vh - 310px) ;
   }
 
   .prio_button {
