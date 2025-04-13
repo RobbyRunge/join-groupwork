@@ -117,7 +117,7 @@ function HTMLTamplateForTheEditFunk() {
           <input data-date-format="dd mm yy" name="date" id="editDate" type="date" class="inputfield dimensions"/>
         </form>
         <h3>Priority</h3>
-        <div class="button_container">
+        <div class="button_container_edit">
           <button onclick="urgent(event)" id="urgent" class="prio_button">Urgent <img id="urgentImageEditBtn" src="../../assets/icons/board/forEditUrgent.svg" alt="urgent"></button>
           <button onclick="medium(event)" id="medium" class="prio_button">Medium <img id="mediumImageEditBtn" src="../../assets/icons/board/forEditMedium.svg" alt="medium"></button>
           <button onclick="low(event)" id="low" class="prio_button">Low <img id="lowImageEditBtn" src="../../assets/icons/board/forEditLow.svg" alt="low"></button>
@@ -250,7 +250,7 @@ function HTMLTamplateForAddTaskInBorad() {
         </div>
         <div class="inputfield_title_container">
             <p class="tasktitles">Prio</p>
-            <div class="button_container button_container_section_board">
+            <div class="button_container_edit button_container_section_board">
                 <button onclick="buttonUrgent(event)" id="urgent" class="prioBtn transition">Urgent <div id="iconurgent" class="prio_icon"><img src="../../assets/icons/addTask/icon_urgent.svg" alt=""></div></button>
                 <button onclick="buttonMedium(event)" id="medium" class="prioBtn transition">Medium<div id="iconmedium" class="prio_icon"><img src="../../assets/icons/addTask/icon_medium.svg" alt=""></div></button>
                 <button onclick="buttonLow(event)" id="low" class="prioBtn">Low<div id="iconlow" class="prio_icon transition"><img src="../../assets/icons/addTask/icon_low.svg" alt=""></div></button>

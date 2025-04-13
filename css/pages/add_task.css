@@ -978,8 +978,8 @@ input[type="date"]:valid {
     font-size: 16px;
   }
 
-  button {
-    font-size: 12px !important;
+  .button_container button {
+    font-size: 16px !important;
   }
 
   .inputfield,
@@ -1070,7 +1070,7 @@ input[type="date"]:valid {
     width: calc(100vw - 48px) !important;
   }
 
-  button {
+  .button_container button {
     font-size: 16px !important;
   }
 

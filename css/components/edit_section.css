@@ -52,10 +52,11 @@ textarea {
   border-radius: 10px;
 }
 
-.button_container {
+.button_container_edit {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .prio_button {
@@ -219,12 +220,6 @@ select {
     height: calc(100vh - 260px);
   }
 
-  .prio_button {
-    width: 80px;
-    height: 35px;
-    font-size: 12px !important;
-  }
-
   label {
     font-size: 14px;
   }
@@ -274,10 +269,13 @@ select {
     height: calc(100vh - 310px) ;
   }
 
+  .button_container_edit {
+    gap: 0;
+  }
   .prio_button {
-    width: 120px;
-    height: 50px;
-    font-size: 13px;
+    width: 80px;
+    height: 40px;
+    font-size: 8px;
   }
 
   #editTitle,
