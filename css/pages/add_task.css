@@ -373,7 +373,7 @@ p {
   border-radius: 10px;
   border: solid 1px rgba(41, 171, 226, 1);
   background-color: white;
-  padding-right: 16px;
+  padding-right: 10px;
 }
 
 .subtask_inputfield_text:focus::placeholder {
