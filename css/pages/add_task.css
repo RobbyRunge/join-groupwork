@@ -573,7 +573,8 @@ ul {
   background: rgba(120, 120, 120, 1);
 }
 
-.contactlist {
+.contactlist,
+.categorylist {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -590,7 +591,8 @@ ul {
   cursor: pointer;
 }
 
-.contactlist:hover {
+.contactlist:hover,
+.categorylist:hover {
   background-color: rgba(209, 209, 209, 1);
 }
 
@@ -785,7 +787,8 @@ input[type="date"]:valid {
 
   .inputfield,
   .textareafield,
-  .subtask_inputfield {
+  .subtask_inputfield,
+  .button_container {
     width: 440px !important;
   }
 
@@ -811,6 +814,10 @@ input[type="date"]:valid {
 
   .assigned_contact_wrapper {
     width: 440px;
+  }
+
+  .catecory_wrapper {
+    width: 440px !important;
   }
 
   .catecory_wrapper.visible {
@@ -888,9 +895,22 @@ input[type="date"]:valid {
     max-width: 340px;
   }
 
-  .contact_wrapper,
+  .contact_wrapper.visible,
   .catecory_wrapper {
-    max-width: 340px !important;
+    width: 340px !important;
+  }
+
+  .contactlist {
+    max-width: calc(100vw - 64px) !important;
+  }
+
+  .categorylist {
+    max-width: calc(100vw - 48px) !important;
+  }
+
+  .contactlist:hover,
+  .contactlist_clicket {
+    max-width: calc(100vw - 64px) !important;
   }
 
   .textareafield {
@@ -965,12 +985,6 @@ input[type="date"]:valid {
 
   li {
     max-width: 160px;
-  }
-
-  .contactlist,
-  .contactlist_clicket {
-    font-size: 16px;
-    max-width: 300px;
   }
 
   .inputfield,
@@ -1128,6 +1142,17 @@ input[type="date"]:valid {
 }
 
 @media only screen and (max-width: 400px) {
+  .contactlist,
+  .categorylist {
+    font-size: 14px;
+  }
+
+  .contact_img_cyrcle {
+    width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+
   .urgentbutton,
   .backgroundcolormedium,
   .backgroundcolorlow,
