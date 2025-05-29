@@ -2,7 +2,7 @@
 
 ## <img src="https://img.icons8.com/color/24/000000/play.png" style="vertical-align: middle;" height="24" width="24"/> About
 
-A brief description of your Join project management tool that helps users organize tasks in a Kanban-style board.
+Web-based Kanban app for task management: Users can create, organise and track tasks in interactive lists - ideal for individuals or teams.
 Updated Projekt from https://github.com/RobbyRunge/Join-Fork
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/1541/1541425.png" style="vertical-align: middle;" height="24" width="24"/> Features
