@@ -70,7 +70,6 @@ join/
 | |
 │ └── standard.css # Global CSS file
 |
-|
 ├── pages/ # All HTML files
 │ ├── contacts/ # Contacts
 │ │ ├── contacts.html
