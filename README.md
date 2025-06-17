@@ -3,7 +3,7 @@
 ## <img src="https://img.icons8.com/color/24/000000/play.png" style="vertical-align: middle;" height="24" width="24"/> About
 
 Web-based Kanban app for task management: Users can create, organise and track tasks in interactive lists - ideal for individuals or teams.
-Updated Projekt from https://github.com/RobbyRunge/Join-Fork
+Project status after completion https://github.com/RobbyRunge/Join-Fork / fork from: https://github.com/D-Aldin/join
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/1541/1541425.png" style="vertical-align: middle;" height="24" width="24"/> Features
 
