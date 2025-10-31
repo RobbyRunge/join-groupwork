@@ -136,7 +136,7 @@ join/
 
 1. Clone the repository:
    ```
-   git clone https://github.com/RobbyRunge/Join-Groupwork.git
+   git clone https://github.com/RobbyRunge/join-groupwork.git
    ```
 2. Open `index.html` in your browser to start using the application
 
