@@ -74,6 +74,11 @@ h3 {
   margin: 0;
 }
 
+.links {
+  color: rgba(41, 171, 226, 1);
+  text-decoration: none;
+}
+
 @media only screen and (max-width: 1400px) {
   .scroll_layout {
     width: auto;
@@ -133,6 +138,7 @@ h3 {
 }
 
 @media only screen and (max-width: 540px) {
+
   .link_nav_summary,
   .link_nav_add_task,
   .link_nav_board,
