@@ -22,8 +22,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # All-Inkl unterstützt FTPS (explizites TLS) auf Port 21
-          protocol: ftps
+          # ftp = plain (funktioniert bei All-Inkl, da FTPS Datenkanal resettet)
+          protocol: ftp
           port: 21
           # Lokaler Quellordner (Punkt = gesamtes Repo-Root)
           local-dir: ./
