@@ -1,0 +1,40 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Upload via FTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          # All-Inkl FTP-Server: zu finden im KAS unter "FTP-Accounts"
+          # Format: w0xxxxxx.kasserver.com  ODER  ftp.robby-runge.de
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # All-Inkl unterstützt FTPS (explizites TLS) auf Port 21
+          protocol: ftps
+          port: 21
+          # Lokaler Quellordner (Punkt = gesamtes Repo-Root)
+          local-dir: ./
+          # Zielpfad auf dem Server – bei All-Inkl RELATIV zum FTP-Root (kein führender /)
+          # FTP-Root ist: /www/htdocs/w0xxxxxx/
+          # → vollständiger Pfad wird: /www/htdocs/w0xxxxxx/robby-runge.de/join/
+          server-dir: robby-runge.de/join/
+          # Dateien/Ordner die NICHT hochgeladen werden sollen
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/out/**
+            .github/**
