@@ -14,27 +14,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          # All-Inkl FTP-Server: zu finden im KAS unter "FTP-Accounts"
-          # Format: w0xxxxxx.kasserver.com  ODER  ftp.robby-runge.de
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          # ftp = plain (funktioniert bei All-Inkl, da FTPS Datenkanal resettet)
-          protocol: ftp
-          port: 21
-          # Lokaler Quellordner (Punkt = gesamtes Repo-Root)
-          local-dir: ./
-          # Zielpfad auf dem Server – bei All-Inkl RELATIV zum FTP-Root (kein führender /)
-          # FTP-Root ist: /www/htdocs/w0xxxxxx/
-          # → vollständiger Pfad wird: /www/htdocs/w0xxxxxx/robby-runge.de/join/
-          server-dir: robby-runge.de/join/
-          # Dateien/Ordner die NICHT hochgeladen werden sollen
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/out/**
-            .github/**
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Deploy via lftp
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -c "
+            set ftp:ssl-allow no;
+            set ftp:passive-mode on;
+            open -u $FTP_USERNAME,$FTP_PASSWORD $FTP_SERVER;
+            mirror -R --parallel=3 --delete \
+              --exclude ^\.git \
+              --exclude ^\.github/ \
+              --exclude ^out/ \
+              . robby-runge.de/join/;
+            bye
+          "
